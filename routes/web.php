@@ -13,10 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/', function() {
     return view('login');
 });
 
-Route::get('/tambahkader', function () {
+Route::get('/tambahkader', function() {
     return view('admin/tambahKader');
+});
+
+route::get('/daftarposyandu', function() {
+    return view('admin/dashboardAdmin');
 });
