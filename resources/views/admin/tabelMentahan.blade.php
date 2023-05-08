@@ -43,7 +43,21 @@
     <section class="p-4" id="main-content">
         <div class="card mt-5">
             <div class="card-body">
-                <h4>Lorem Ipsum</h4>
+                <a href="" class="btn btn-info">Cetak</a>
+                <table class="table mt-2">
+                    <tr>
+                        <th>Nama Balita</th>
+                        <th>Alamat</th>
+                        <th>Umur</th>
+                        <th>Status Imunisasi</th>
+                    </tr>
+                    <tr>
+                        <td>Malik Ibrahim</td>
+                        <td>Surabaya, jl.sutomo</td>
+                        <td>2</td>
+                        <td>Sudah</td>
+                    </tr>
+                </table>
             </div>
         </div>
     </section>

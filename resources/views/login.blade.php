@@ -26,7 +26,10 @@
                 <br>
                 <p>
                     <button type="submit" class="btn btn-success mt-3">Login</button>
-                    <a href="#">Forget Password</a>
+                </p>
+                <p class="forget mt-2">
+                    Lupa Password?
+                    <a href="#">Reset Password.</a>
                 </p>
             </form>
         </div>

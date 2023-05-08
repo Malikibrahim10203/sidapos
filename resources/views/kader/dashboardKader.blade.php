@@ -19,13 +19,13 @@
         <li>
             <a href="">
                 <i class="bi bi-list mr-2"></i>
-                Daftar Posyandu  
+                Tambah data Balita  
             </a>
         </li>
         <li>
-            <a href="tambahkader">
+            <a href="">
                 <i class="bi bi-person-plus mr-2"></i>
-                Tambah data Kader  
+                Tambah data Ibu Hamil  
             </a>
         </li>
     </div>

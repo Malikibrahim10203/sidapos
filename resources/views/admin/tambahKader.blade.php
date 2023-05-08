@@ -11,7 +11,7 @@
     <title>Sidapos</title>
 </head>
 <body>
-    <div class="container mt-5">
+    <div class="container mt-3">
         <div class="right">
             <h1 class="h1a">Sidapos</h1>
             <img src="{{asset('img/tambahkader.png')}}" alt="">
@@ -33,7 +33,8 @@
                 <input type="password" name="password" placeholder="password" class="isian">
                 <br>
                 <p>
-                    <button type="submit" class="btn btn-success mt-3" class="isian">Tambah Kader</button>
+                    <button type="submit" class="btn btn-success mt-3 isian">Tambah Kader</button>
+                    <a href="dashboardadmin" class="btn btn-info isian">Kembali</a>
                 </p>
             </form>
         </div>

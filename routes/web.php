@@ -21,6 +21,15 @@ Route::get('/tambahkader', function() {
     return view('admin/tambahKader');
 });
 
-route::get('/daftarposyandu', function() {
+route::get('/dashboardadmin', function() {
     return view('admin/dashboardAdmin');
 });
+
+route::get('/dashboardkader', function() {
+    return view('kader/dashboardKader');
+});
+
+route::get('/bahan', function() {
+    return view('admin/tabelMentahan');
+});
+

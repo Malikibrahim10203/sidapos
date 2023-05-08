@@ -4,3 +4,4 @@ document.getElementById("button-toggle").addEventListener("click", () => {
     document.getElementById("main-content").classList.toggle("active-main-content");
     document.getElementById("nav-content").classList.toggle("active-main-content");
 });
+

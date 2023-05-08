@@ -89,3 +89,11 @@ p a {
     margin-left: 71px;
     margin-bottom: 5px;
 }
+
+.btn {
+    width: 100%;
+}
+
+.forget {
+    font-size: 13px;
+}
