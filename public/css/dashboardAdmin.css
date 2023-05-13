@@ -40,6 +40,10 @@ a {
     transition: 0.4s;
 }
 
+#nav-content .container p a{
+    color: white;
+}
+
 #main-content {
     transition: 0.4s;
 }

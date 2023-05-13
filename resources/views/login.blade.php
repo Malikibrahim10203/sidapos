@@ -10,19 +10,32 @@
     <title>Sidapos</title>
 </head>
 <body>
+
     <div class="container mt-5">
+
         <div class="right">
             <h1 class="h1a">Sidapos</h1>
             <img src="{{asset('img/login.png')}}" alt="">
         </div>
+        
         <div class="login">
+            
             <h1 class="h1b">LOGIN</h1>
-            <form action="" method="post">    
-                <label for="email">Email</label>
-                <input type="text" name="email" placeholder="example@exam.com">
+            <form action="{{url('proses_login')}}" method="post">  
+                {{ csrf_field() }}
+                
+                <!-- Alert Input salah-->
+                @if ($errors = Session::get('alert-gagal'))
+                <div class="alert alert-danger">
+                    {{ $errors }}
+                </div>
+                @endif
+
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username" placeholder="example" autofocus required>
                 <br>         
                 <label for="password">Password</label>
-                <input type="password" name="password" placeholder="password">
+                <input type="password" name="password" placeholder="password" required>
                 <br>
                 <p>
                     <button type="submit" class="btn btn-success mt-3">Login</button>
@@ -33,6 +46,7 @@
                 </p>
             </form>
         </div>
+
     </div>
 </body>
 </html>

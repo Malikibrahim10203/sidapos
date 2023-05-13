@@ -13,20 +13,37 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function() {
-    return view('login');
-});
+//
+Route::get('login', 'App\Http\Controllers\AuthController@index')->name('login');
+Route::post('proses_login', 'App\Http\Controllers\AuthController@proses_login')->name('proses_login');
 
-Route::get('/tambahkader', function() {
-    return view('admin/tambahKader');
-});
+// auth 
 
-route::get('/dashboardadmin', function() {
-    return view('admin/dashboardAdmin');
-});
+// auth -> Admin || Kader
+Route::group(['middleware' => ['auth']], function()
+{
+    // cek_login yang di inisialisasi di kernel tadi 
+    Route::group(['middleware' => ['cek_login:admin']], function()
+    {
+        Route::get('/dashboardadmin', 'App\Http\Controllers\AdminController@index')->name('admin');
 
-route::get('/dashboardkader', function() {
-    return view('kader/dashboardKader');
+        Route::get('/tampiltambahkader', 'App\Http\Controllers\KaderController@viewtambah')->name('admin');
+        
+
+
+
+
+
+        //Route::get('/tambahkader', 'App\Http\Controllers\KaderController@simpan')->name('simpan');
+    });
+
+    Route::group(['middleware' => ['cek_login:kader']], function()
+    {
+        Route::get('/dashboardkader', 'App\Http\Controllers\KaderController@index')->name('kader');
+        
+    });
+
+    Route::get('/logout','App\Http\Controllers\AuthController@logout')->name('logout');
 });
 
 route::get('/bahan', function() {

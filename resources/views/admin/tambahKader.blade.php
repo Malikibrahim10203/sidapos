@@ -24,7 +24,9 @@
                 <br>
                 <label for="pos">Pos</label>
                 <select name="Pos" id="" class="isian">
-                    <option value="Anggrek">Angrek</option>
+                    @foreach($dataposyandu as $data)
+                        <option value="{{ $data->idposyandu }}" >{{ $data->pos }}</option>
+                    @endforeach
                 </select>    
                 <label for="email">Email</label>
                 <input type="text" name="email" placeholder="example@exam.com" class="isian">

@@ -33,17 +33,28 @@
     <section class="p-4" id="nav-content">
         
         <nav class="navbar navbar-expand-lg">
-            <button class="btn btn-light" id="button-toggle">
-                <i class="bi bi-three-dots"></i>
-            </button>
+            <div class="container">
+                <button class="btn btn-light" id="button-toggle">
+                    <i class="bi bi-three-dots"></i>
+                </button>
+
+                <p>
+                    <a href="{{url('logout')}}"><i class="bi bi-box-arrow-right"></i>Keluar</a>
+                </p>
+            </div>
         </nav>
         
     </section>
 
     <section class="p-4" id="main-content">
-        <div class="card mt-5">
-            <div class="card-body">
-                <h4>Lorem Ipsum</h4>
+        <div class="container">
+            <div class="card mt-5">
+                <div class="card-body">
+                    <p>
+                        <strong>Wellcome,</strong>
+                        {{ $data }}
+                    </p>
+                </div>
             </div>
         </div>
     </section>
