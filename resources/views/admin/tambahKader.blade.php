@@ -18,21 +18,26 @@
         </div>
         <div class="login">
             <h1 class="h1b">Tambah Kader</h1>
-            <form action="" method="post">
+            <form action="simpan" method="post">
+                @csrf
                 <label for="namalengkap">Nama Lengkap</label>
                 <input type="text" name="namalengkap" placeholder="nama lengkap" class="isian">
+                <br>    
+                <label for="username">Username</label>
+                <input type="text" name="username" placeholder="example" class="isian">
                 <br>
-                <label for="pos">Pos</label>
-                <select name="Pos" id="" class="isian">
-                    @foreach($dataposyandu as $data)
-                        <option value="{{ $data->idposyandu }}" >{{ $data->pos }}</option>
-                    @endforeach
-                </select>    
                 <label for="email">Email</label>
                 <input type="text" name="email" placeholder="example@exam.com" class="isian">
                 <br>         
                 <label for="password">Password</label>
                 <input type="password" name="password" placeholder="password" class="isian">
+                <br>
+                <label for="pos">Pos</label>
+                <select name="pos" id="po" class="isian">
+                    @foreach($dataposyandu as $data)
+                        <option value="{{ $data->idposyandu }}">{{ $data->pos }}</option>
+                    @endforeach
+                </select>
                 <br>
                 <p>
                     <button type="submit" class="btn btn-success mt-3 isian">Tambah Kader</button>

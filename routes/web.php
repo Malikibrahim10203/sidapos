@@ -50,3 +50,5 @@ route::get('/bahan', function() {
     return view('admin/tabelMentahan');
 });
 
+Route::post('/simpan', 'App\Http\Controllers\AdminController@simpan');
+
