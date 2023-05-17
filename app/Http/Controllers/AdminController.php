@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Input;
 use Auth;
 use App\Models\User;
@@ -41,5 +42,13 @@ class AdminController extends Controller
         $data->save();
         
         return redirect('dashboardadmin');
+    }
+
+    public function tabel()
+    {
+        $jabatan1 = DB::table('users')
+            ->leftJoin('posyandu', 'users.idposyandu', '=', 'posyandu.idposyandu')->where('jabatan', '=', 'kader')->where('users.idposyandu', '=', '1')
+            ->get();
+        return view('admin/tabelAnggrek', ['jabatan1'=>$jabatan1]);
     }
 }

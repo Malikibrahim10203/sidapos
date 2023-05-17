@@ -14,13 +14,20 @@
 </head>
 <body>
     <div class="sidebar p-4" id="sidebar">
-        <h3 class="mb-5 text-black">Sidapos</h3>
+        <h3 class="mb-5 text-black"><a href="dashboardadmin">Sidapos</a></h3>
         <h5 class="mt-5">Menu</h5>
         <li>
-            <a href="">
-                <i class="bi bi-list mr-2"></i>
-                Daftar Posyandu  
-            </a>
+            <div class="dropdown">
+                <a class="btn btn-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Daftar Posyandu
+                </a>
+
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="tabeladmin">Posyandu Anggrek</a></li>
+                    <li><a class="dropdown-item" href="#">Posyandu Mawar</a></li>
+                    <li><a class="dropdown-item" href="#">Balai Desa</a></li>
+                </ul>
+            </div>
         </li>
         <li>
             <a href="tambahkader">
