@@ -44,6 +44,13 @@ class AdminController extends Controller
         return redirect('dashboardadmin');
     }
 
+    public function viewtambah()
+    {
+        $dataposyandu = DB::table('posyandu')->get();
+
+        return view('admin/tambahKader', ['dataposyandu'=> $dataposyandu]);
+    }
+
     public function tabelanggrek()
     {
         $kaderanggrek = DB::table('users')
