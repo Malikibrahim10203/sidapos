@@ -17,13 +17,13 @@
         <h3 class="mb-5 text-black">Sidapos</h3>
         <h5 class="mt-5">Menu</h5>
         <li>
-            <a href="">
+            <a href="tambahbalita">
                 <i class="bi bi-list mr-2"></i>
                 Tambah data Balita  
             </a>
         </li>
         <li>
-            <a href="">
+            <a href="tambahbumil">
                 <i class="bi bi-person-plus mr-2"></i>
                 Tambah data Ibu Hamil  
             </a>
@@ -50,10 +50,7 @@
         <div class="container">
             <div class="card mt-5">
                 <div class="card-body">
-                    <p>
-                        <strong>Wellcome,</strong>
-                        {{ $data }}
-                    </p>
+                    
                 </div>
             </div>
         </div>

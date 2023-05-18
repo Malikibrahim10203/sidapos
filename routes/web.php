@@ -27,7 +27,7 @@ Route::group(['middleware' => ['auth']], function()
     {
         Route::get('/dashboardadmin', 'App\Http\Controllers\AdminController@index')->name('admin');
 
-        Route::get('/tampiltambahkader', 'App\Http\Controllers\KaderController@viewtambah')->name('admin');
+        Route::get('/tampiltambahkader', 'App\Http\Controllers\AdminController@viewtambah')->name('admin');
 
         Route::get('/tabelkaderanggrek', 'App\Http\Controllers\AdminController@tabelanggrek')->name('admin');
         
@@ -42,6 +42,7 @@ Route::group(['middleware' => ['auth']], function()
     Route::group(['middleware' => ['cek_login:kader']], function()
     {
         Route::get('/dashboardkader', 'App\Http\Controllers\KaderController@index')->name('kader');
+        Route::get('/tambahbalita', 'App\Http\Controllers\KaderController@tambahbalita')->name('kader');
         
     });
 
