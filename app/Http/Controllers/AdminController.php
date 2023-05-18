@@ -49,6 +49,6 @@ class AdminController extends Controller
         $jabatan1 = DB::table('users')
             ->leftJoin('posyandu', 'users.idposyandu', '=', 'posyandu.idposyandu')->where('jabatan', '=', 'kader')->where('users.idposyandu', '=', '1')
             ->get();
-        return view('admin/tabelAnggrek', ['jabatan1'=>$jabatan1]);
+        return view('admin/tabelkader/tabelAnggrek', ['jabatan1'=>$jabatan1]);
     }
 }
