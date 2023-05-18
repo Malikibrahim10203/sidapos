@@ -66,7 +66,7 @@
                         <th>Jabatan</th>
                         <th>Posyandu</th>
                     </tr>
-                    @foreach( $jabatan1 as $d) 
+                    @foreach( $kaderanggrek as $d) 
                     <tr>              
                         <td>{{$d->namalengkap}}</td>
                         <td>{{$d->email}}</td>
