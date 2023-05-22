@@ -27,7 +27,7 @@ class KaderController extends Controller
     {
         return view('kader/tambahIbuhamil');
     }
-
+    
     public function tabelbalita() {
         $user = Auth::user();
         $data = $user->idposyandu;
@@ -38,7 +38,11 @@ class KaderController extends Controller
     }
 
     public function tabelibuhamil() {
-        return view('kader/tabelIbuhamil');
+        $user = Auth::user();
+        $data = $user->idposyandu;
+
+        $tabelibuhamil = DB::table('ibuhamil')->where('idposyandu', '=', $data)->get();
+        return view('kader/tabelIbuhamil', ['tabelibuhamil'=>$tabelibuhamil]);
     }
 
     public function simpanbalita(Request $request)
