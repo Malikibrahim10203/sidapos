@@ -66,15 +66,15 @@
                     <h1 class="h1b">Tambah Balita</h1>
                     @csrf
                     <label for="namalengkap">Nama Lengkap</label>
-                    <input type="text" name="namalengkap" placeholder="nama lengkap" class="isian">
+                    <input type="text" name="namalengkap" placeholder="nama lengkap" class="isian" required>
                     <br>
                     <br>    
                     <label for="Alamat">Alamat</label>
-                    <input type="text" name="alamat" placeholder="alamat" class="isian">
+                    <input type="text" name="alamat" placeholder="alamat" class="isian" required>
                     <br>
                     <br>
                     <label for="umur">Umur</label>
-                    <input type="number" name="umur" placeholder="umur" class="isian" min="0" max="5">
+                    <input type="number" name="umur" placeholder="umur" class="isian" min="0" max="5" required>
                     <br>    
                     <br>     
                     <label for="imunisasi_bcg">Imunisasi BCG</label>

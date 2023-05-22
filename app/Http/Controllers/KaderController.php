@@ -63,6 +63,20 @@ class KaderController extends Controller
             $data->save();
 
             return redirect('dashboardkader');
+        } else if ($user->idposyandu == 2) {
+            $data = new Balita;
+            $data->namalengkap      = $request->namalengkap;
+            $data->alamat           = $request->alamat;
+            $data->umur             = $request->umur;
+            $data->imunisasi_bcg    = $request->imunisasi_bcg;
+            $data->imunisasi_campak = $request->imunisasi_campak;
+            $data->imunisasi_dpt_hb_hib  = $request->imunisasi_dpt;
+            $data->imunisasi_hepatitis_b = $request->imunisasi_hepatitis;
+            $data->imunisasi_polio       = $request->imunisasi_polio;
+            $data->idposyandu       = 2;
+            $data->save();
+
+            return redirect('dashboardkader');
         }
     }
     
