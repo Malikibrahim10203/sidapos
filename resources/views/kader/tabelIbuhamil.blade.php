@@ -60,28 +60,30 @@
     </section>
 
     <section class="p-4" id="main-content">
-        <div class="container">
-            <div class="card mt-5">
-                <form action="simpanibuhamil" method="post">
-                    <h1 class="h1b">Tambah Ibu Hamil</h1>
-                    @csrf
-                    <label for="namalengkap">Nama Lengkap</label>
-                    <input type="text" name="namalengkap" placeholder="nama lengkap" class="isian">
-                    <br>
-                    <br>    
-                    <label for="Alamat">Alamat</label>
-                    <input type="text" name="alamat" placeholder="alamat" class="isian">
-                    <br>
-                    <br>
-                    <label for="umur">Umur Kehamilan</label>
-                    <input type="number" name="umur" placeholder="umur" class="isian" min="0" max="12">
-                    <br>
-                    <br>
-                    <p>
-                        <button type="submit" class="btn btn-success mt-3 isian">Tambah Ibu Hamil</button>
-                        <a href="dashboardkader" class="btn btn-info isian">Kembali</a>
-                    </p>
-                </form>
+        <div class="card mt-5">
+            <div class="card-body">
+                <a href="" class="btn btn-info">Cetak</a>
+                <table class="table mt-3">
+                    <tr>
+                        <th>Nama Lengkap</th>
+                        <th>Alamat</th>
+                        <th>Umur Kehamilan</th>
+                        <th>Opsi</th>
+                    </tr>
+
+                    @foreach($tabelibuhamil as $d)
+                    <tr>
+                        <td>{{ $d->namalengkap }}</td>
+                        <td>{{ $d->alamat }}</td>
+                        <td>{{ $d->umurkehamilan }}</td>
+                        <td>
+                            <a href="" class="btn btn-info">Ubah</a> 
+                            |
+                            <a href="" class="btn btn-danger">Hapus</a>
+                        </td>
+                    </tr>
+                    @endforeach
+                </table>
             </div>
         </div>
     </section>
