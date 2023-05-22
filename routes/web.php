@@ -32,7 +32,9 @@ Route::group(['middleware' => ['auth']], function()
         Route::get('/tabelkaderanggrek', 'App\Http\Controllers\AdminController@tabelanggrek')->name('admin');
 
         Route::get('/tabelkadermawar', 'App\Http\Controllers\AdminController@tabelmawar')->name('admin');
-        
+        //
+        Route::get('/tabelkaderbalaidesa', 'App\Http\Controllers\AdminController@tabelbalaidesa')->name('admin');
+        //
 
 
 
