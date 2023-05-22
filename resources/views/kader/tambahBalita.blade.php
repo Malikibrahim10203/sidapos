@@ -128,7 +128,7 @@
                     <br>
                     <br>
                     <p>
-                        <button type="submit" class="btn btn-success mt-3 isian">Tambah Kader</button>
+                        <button type="submit" class="btn btn-success mt-3 isian">Tambah Balita</button>
                         <a href="dashboardkader" class="btn btn-info isian">Kembali</a>
                     </p>
                 </form>
