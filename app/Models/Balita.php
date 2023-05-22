@@ -12,7 +12,6 @@ class Balita extends Model
     protected $table = 'balita';
     protected $primaryKey = 'idbalita';
     protected $fillable = [
-        'idbalita',
         'namalengkap',
         'alamat',
         'umur',

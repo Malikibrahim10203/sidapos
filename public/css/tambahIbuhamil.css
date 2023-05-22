@@ -1,0 +1,110 @@
+
+body {
+    background-color: #F8F8F8;
+}
+
+li {
+    list-style: none;
+    margin: 20px 0 20px 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    margin-left: -300px;
+    transition: 0.4s;
+    background-color: white;
+    box-shadow: 0px 10px 15px grey;
+    border-radius: 15px;
+}
+
+.sidebar a {
+    color: black;
+}
+
+.active-main-content {
+    margin-left: 250px;
+}
+
+.active-sidebar {
+    margin-left: 0;
+}
+
+#nav-content {
+    background-color: #00B0FF;
+    transition: 0.4s;
+}
+
+#nav-content .container p a{
+    color: white;
+}
+
+#main-content {
+    transition: 0.4s;
+}
+
+
+
+.card {
+    width: 70%;
+    height: 90%;
+    margin-left: 20%;
+    align-items: center;
+}
+
+form {
+    width: 500px;
+    margin: 20px 50%;
+}
+
+.h1a {
+    margin: 10px;
+    text-align: left;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-left: 40px;
+}
+
+.h1b {
+    margin: 50px;
+    font-size: 30px;
+    text-align: center;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+hr {
+    border-top: 2px solid black;
+}
+
+form label {
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 5px;
+}
+
+.isian {
+    width: 100%;
+    margin: 2px;
+    border: none;
+    outline: none;
+    padding: 8px;
+    border-radius: 5px;
+    border-bottom: 2px solid silver;
+}
+
+p {
+    justify-content: center;
+    margin: 2px;
+}
+
+p a {
+    margin-left: 60px;
+    margin-bottom: 5px;
+}

@@ -27,7 +27,7 @@
                 <input type="text" name="username" placeholder="example" class="isian">
                 <br>
                 <label for="email">Email</label>
-                <input type="text" name="email" placeholder="example@exam.com" class="isian">
+                <input type="email" name="email" placeholder="example@exam.com" class="isian">
                 <br>         
                 <label for="password">Password</label>
                 <input type="password" name="password" placeholder="password" class="isian">

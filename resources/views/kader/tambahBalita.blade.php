@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="{{asset('css/dashboardAdmin.css')}}">
+    <link rel="stylesheet" href="{{asset('css/tambahBalita.css')}}">
     <script src="{{asset('js/dashboardAdmin.js')}}"></script>
     <title>Dashboard</title>
 </head>
@@ -17,16 +17,29 @@
         <h3 class="mb-5 text-black">Sidapos</h3>
         <h5 class="mt-5">Menu</h5>
         <li>
-            <a href="tambahbalita">
-                <i class="bi bi-list mr-2"></i>
-                Tambah data Balita  
-            </a>
+            <div class="dropdown">
+                <a class="btn btn-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Tambah Data
+                </a>
+
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="tambahbalita">Tambah data Balita</a></li>
+                    <li><a class="dropdown-item" href="tambahibuhamil">Tambah data Ibu Hamil</a></li>
+                </ul>
+            </div>
         </li>
+
         <li>
-            <a href="tambahbumil">
-                <i class="bi bi-person-plus mr-2"></i>
-                Tambah data Ibu Hamil  
-            </a>
+            <div class="dropdown">
+                <a class="btn btn-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Lihat Data
+                </a>
+
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="tabelbalita">Lihat data Balita</a></li>
+                    <li><a class="dropdown-item" href="tabelibuhamil">Lihat data Ibu Hamil</a></li>
+                </ul>
+            </div>
         </li>
     </div>
 
@@ -49,9 +62,78 @@
     <section class="p-4" id="main-content">
         <div class="container">
             <div class="card mt-5">
-                <div class="card-body">
-                    
-                </div>
+                <form action="simpanbalita" method="post">
+                    <h1 class="h1b">Tambah Balita</h1>
+                    @csrf
+                    <label for="namalengkap">Nama Lengkap</label>
+                    <input type="text" name="namalengkap" placeholder="nama lengkap" class="isian">
+                    <br>
+                    <br>    
+                    <label for="Alamat">Alamat</label>
+                    <input type="text" name="alamat" placeholder="alamat" class="isian">
+                    <br>
+                    <br>
+                    <label for="umur">Umur</label>
+                    <input type="number" name="umur" placeholder="umur" class="isian" min="0" max="5">
+                    <br>    
+                    <br>     
+                    <label for="imunisasi_bcg">Imunisasi BCG</label>
+                    <select name="imunisasi_bcg" id="imunisasi_bcg" class="isian">
+                        
+                            <option value="belum">Belum Vaksin</option>
+                            <option value="sudah">Sudah Vaksin</option>
+                            
+                        
+                    </select>
+                    <br>
+                    <br>
+                    <label for="imunisasi_campak">Imunisasi Campak</label>
+                    <select name="imunisasi_campak" id="imunisasi_campak" class="isian">
+                        
+                            <option value="belum">Belum Vaksin</option>
+                            <option value="sudah">Sudah Vaksin</option>
+                            
+                        
+                    </select>
+                    <br>
+                    <br>
+                    <label for="imunisasi_dpt">imunisasi DPT HB HIB</label>
+                    <select name="imunisasi_dpt" id="imunisasi_dpt" class="isian">
+                        
+                            <option value="belum">Belum Vaksin</option>
+                            <option value="sudah">Sudah Vaksin</option>
+                            
+                        
+                    </select>
+                    <br>
+                    <br>
+                    <label for="imunisasi_hepatitis">Imunisasi Hepatitis B</label>
+                    <select name="imunisasi_hepatitis" id="imunisasi_hepatitis" class="isian">
+                        
+                            <option value="belum">Belum Vaksin</option>
+                            <option value="sudah">Sudah Vaksin</option>
+                            
+                        
+                    </select>
+                    <br>
+                    <br>
+                    <label for="imunisasi_polio">Imunisasi Polio</label>
+                    <select name="imunisasi_polio" id="imunisasi_polio" class="isian">
+                        
+                            <option value="belum">Belum Vaksin</option>
+                            <option value="sudah">Sudah Vaksin</option>
+                            
+                        
+                    </select>
+                    <br>
+                    <br>
+                    <p>
+                        <button type="submit" class="btn btn-success mt-3 isian">Tambah Kader</button>
+                        <a href="dashboardkader" class="btn btn-info isian">Kembali</a>
+                    </p>
+                </form>
+            
+                
             </div>
         </div>
     </section>
