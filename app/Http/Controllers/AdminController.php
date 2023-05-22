@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Input;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 
 class AdminController extends Controller
@@ -61,10 +61,7 @@ class AdminController extends Controller
 
     public function tabelmawar()
     {
-        $jabatan1 = DB::table('users')
-            ->leftJoin('posyandu', 'users.idposyandu', '=', 'posyandu.idposyandu')->where('jabatan', '=', 'kader')->where('users.idposyandu', '=', '1')
-            ->get();
-        return view('admin/tabelkader/tabelAnggrek', ['jabatan1'=>$jabatan1]);
+        return view('admin/tabelkader/tabelMawar');
     }
 
     public function tabelbalaidesa()
@@ -74,4 +71,6 @@ class AdminController extends Controller
             ->get();
         return view('admin/tabelkader/tabelAnggrek', ['jabatan1'=>$jabatan1]);
     }
+
+    
 }

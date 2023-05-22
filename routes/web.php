@@ -30,6 +30,8 @@ Route::group(['middleware' => ['auth']], function()
         Route::get('/tampiltambahkader', 'App\Http\Controllers\AdminController@viewtambah')->name('admin');
 
         Route::get('/tabelkaderanggrek', 'App\Http\Controllers\AdminController@tabelanggrek')->name('admin');
+
+        Route::get('/tabelkadermawar', 'App\Http\Controllers\AdminController@tabelmawar')->name('admin');
         
 
 

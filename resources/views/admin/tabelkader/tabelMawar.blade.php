@@ -66,18 +66,7 @@
                         <th>Jabatan</th>
                         <th>Posyandu</th>
                     </tr>
-                    @foreach( $kaderanggrek as $d) 
-                    <tr>              
-                        <td>{{$d->namalengkap}}</td>
-                        <td>{{$d->email}}</td>
-                        <td>{{$d->jabatan}}</td>
-                        <td>{{$d->pos}}</td>
-                        <td>
-                            <a href="" class="btn btn-info">Edit</a>
-                            <a href="" class="btn btn-danger">Delete</a>
-                        </td>
-                    </tr>
-                    @endforeach
+                    
                 </table>
             </div>
         </div>
