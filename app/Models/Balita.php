@@ -14,7 +14,7 @@ class Balita extends Model
     protected $fillable = [
         'namalengkap',
         'alamat',
-        'umur',
+        'tanggal_lahir',
         'imunisasi_bcg',
         'imunisasi_campak',
         'imunisasi_dpt_hb_hib',

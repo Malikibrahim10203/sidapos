@@ -73,8 +73,8 @@
                     <input type="text" name="alamat" placeholder="alamat" class="isian" required>
                     <br>
                     <br>
-                    <label for="umur">Umur Kehamilan</label>
-                    <input type="number" name="umur" placeholder="umur" class="isian" min="0" max="12" required>
+                    <label for="hpht">HPHT</label>
+                    <input type="date" name="hpht" placeholder="hpht" class="isian" required>
                     <br>
                     <br>
                     <p>

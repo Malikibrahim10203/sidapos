@@ -67,22 +67,43 @@
                 <a href="" class="btn btn-info">Cetak</a>
                 <table class="table mt-3">
                     <tr>
-                        <th>Nama Lengkap</th>
-                        <th>Alamat</th>
-                        <th>Umur</th>
-                        <th>Imunisasi BCG</th>
-                        <th>Imunisasi Campak</th>
-                        <th>Imunisasi DPT HB HIB</th>
-                        <th>Imunisasi Hepatitis B</th>
-                        <th>Imunisasi Polio</th>
-                        <th>Opsi</th>
+                        <th rowspan="2">Nama Lengkap</th>
+                        <th rowspan="2">Alamat</th>
+                        <th rowspan="2">Umur</th>
+                        <th colspan="5" style="text-align: center;">IMUNISASI</th>
+                        <th rowspan="2" style="text-align: center;">Opsi</th>
+                    </tr>
+                    <tr>
+                        <th>BCG</th>
+                        <th>Campak</th>
+                        <th>DPT HB HIB</th>
+                        <th>Hepatitis B</th>
+                        <th>Polio</th>
                     </tr>
                     
                     @foreach($tabelbalita as $d)
                     <tr>
                         <td>{{ $d->namalengkap }}</td>
                         <td>{{ $d->alamat }}</td>
-                        <td>{{ $d->umur }}</td>
+                        
+                        <?php 
+                        
+                            $tanggallahir = new DateTime( $d->tanggal_lahir );
+                            $sekarang     = new DateTime("today");
+
+                            if($tanggallahir > $sekarang)
+                            {
+                                $thn = 0;
+                                $bln = 0;
+                                $hr = 0;
+                            }
+
+                            $thn = $sekarang->diff($tanggallahir)->y;
+                            $bln = $sekarang->diff($tanggallahir)->m;
+                            $hr = $sekarang->diff($tanggallahir)->d;
+                        ?>
+                        
+                        <td><?php echo $thn." tahun ".$bln." bulan ".$hr." hari"; ?></td>
                         <td>
                             <?php
                             
@@ -139,7 +160,7 @@
                             ?>
                         </td>
                         <td>
-                            <a href="" class="btn btn-info">Ubah</a> 
+                            <a href="ubahbalita/{{ $d->idbalita }}" class="btn btn-info">Ubah</a> 
                             |
                             <a href="" class="btn btn-danger">Hapus</a>
                         </td>

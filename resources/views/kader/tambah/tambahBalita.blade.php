@@ -73,8 +73,8 @@
                     <input type="text" name="alamat" placeholder="alamat" class="isian" required>
                     <br>
                     <br>
-                    <label for="umur">Umur</label>
-                    <input type="number" name="umur" placeholder="umur" class="isian" min="0" max="5" required>
+                    <label for="tanggallahir">Tanggal Lahir</label>
+                    <input type="date" name="tanggallahir" placeholder="tanggallahir" class="isian" required>
                     <br>    
                     <br>     
                     <label for="imunisasi_bcg">Imunisasi BCG</label>
