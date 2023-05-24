@@ -53,7 +53,11 @@ Route::group(['middleware' => ['auth']], function()
         Route::get('/tabelbalita', 'App\Http\Controllers\KaderController@tabelbalita')->name('kader');
         Route::get('/tabelibuhamil', 'App\Http\Controllers\KaderController@tabelibuhamil')->name('kader');
 
+        Route::post('/simpanbalita', 'App\Http\Controllers\KaderController@simpanbalita');
+        Route::post('/simpanibuhamil', 'App\Http\Controllers\KaderController@simpanibuhamil');
+
         Route::get('/ubahbalita/{id}', 'App\Http\Controllers\KaderController@ubahbalita')->name('kader');
+        Route::post('/updatebalita/{id}', 'App\Http\Controllers\KaderController@updatebalita')->name('update.balita');
 
         
     });
@@ -66,7 +70,4 @@ route::get('/bahan', function() {
 });
 
 Route::post('/simpan', 'App\Http\Controllers\AdminController@simpan');
-Route::post('/simpanbalita', 'App\Http\Controllers\KaderController@simpanbalita');
-Route::post('/simpanibuhamil', 'App\Http\Controllers\KaderController@simpanibuhamil');
 
-Route::post('/updatebalita', 'App\Http\Controllers\KaderController@updatebalita');

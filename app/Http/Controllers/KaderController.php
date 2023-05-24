@@ -87,19 +87,8 @@ class KaderController extends Controller
         return view('kader/ubah/ubahBalita', ['data'=>$data]);
     }
 
-    public function updatebalita(Request $request)
+    public function updatebalita(Request $request, $id)
     {
-        $this->validate($request, [
-            'namalengkap'=>'required',     
-            'alamat'=>'required',          
-            'tanggal_lahir'=>'required',   
-            'imunisasi_bcg'=>'required',   
-            'imunisasi_campak'=>'required',
-            'imunisasi_dpt_hb_hib'=>'required',
-            'imunisasi_hepatitis_b'=>'required',
-            'imunisasi_polio'=>'required', 
-        ]);
-
 
         DB::table('balita')->where('idbalita', $request->id)->update([
             'namalengkap'      => $request->namalengkap,
@@ -109,9 +98,9 @@ class KaderController extends Controller
             'imunisasi_campak' => $request->imunisasi_campak,
             'imunisasi_dpt_hb_hib'  => $request->imunisasi_dpt,
             'imunisasi_hepatitis_b' => $request->imunisasi_hepatitis,
-            'imunisasi_polio'       => $request->imunisasi_polio,
+            'imunisasi_polio'       => $request->imunisasi_polio
         ]);
 
-        return redirect('dashboardkader');
+        return redirect('tabelbalita');
     }
 }

@@ -62,8 +62,8 @@
     <section class="p-4" id="main-content">
         <div class="container">
             <div class="card mt-5">
-                <form action="updatebalita" method="POST">
-                    <h1 class="h1b">Tambah Balita</h1>
+                <form action="/updatebalita/{{ $data->idbalita }}" method="POST">
+                    <h1 class="h1b">Ubah Balita</h1>
                     @csrf
                     <label for="namalengkap">Nama Lengkap</label>
                     <input type="text" name="namalengkap" placeholder="nama lengkap" class="isian" value="{{ $data->namalengkap }}" required>
