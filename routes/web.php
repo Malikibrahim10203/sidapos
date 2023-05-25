@@ -59,6 +59,11 @@ Route::group(['middleware' => ['auth']], function()
         Route::get('/ubahbalita/{id}', 'App\Http\Controllers\KaderController@ubahbalita')->name('kader');
         Route::post('/updatebalita/{id}', 'App\Http\Controllers\KaderController@updatebalita')->name('update.balita');
 
+        Route::get('/ubahibuhamil/{id}', 'App\Http\Controllers\KaderController@ubahibuhamil');
+        Route::post('/updateibuhamil/{id}', 'App\Http\Controllers\KaderController@updateibuhamil');
+
+        Route::get('/hapusbalita/{id}', 'App\Http\Controllers\KaderController@hapusbalita');
+
         
     });
 

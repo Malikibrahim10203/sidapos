@@ -62,24 +62,24 @@
     <section class="p-4" id="main-content">
         <div class="container">
             <div class="card mt-5">
-                <form action="simpanibuhamil" method="post">
+                <form action="/updateibuhamil/{{ $data->idibuhamil }}" method="post">
                     <h1 class="h1b">Tambah Ibu Hamil</h1>
                     @csrf
                     <label for="namalengkap">Nama Lengkap</label>
-                    <input type="text" name="namalengkap" placeholder="nama lengkap" class="isian" required>
+                    <input type="text" name="namalengkap" placeholder="nama lengkap" value="{{ $data->namalengkap }}" class="isian" required>
                     <br>
                     <br>    
                     <label for="Alamat">Alamat</label>
-                    <input type="text" name="alamat" placeholder="alamat" class="isian" required>
+                    <input type="text" name="alamat" placeholder="alamat" value="{{ $data->alamat}}" class="isian" required>
                     <br>
                     <br>
                     <label for="hpht">HPHT</label>
-                    <input type="date" name="hpht" placeholder="hpht" class="isian" required>
+                    <input type="date" name="hpht" placeholder="hpht" value="{{ $data->hpht }}" class="isian" required>
                     <br>
                     <br>
                     <p>
                         <button type="submit" class="btn btn-success mt-3 isian">Tambah Ibu Hamil</button>
-                        <a href="dashboardkader" class="btn btn-info isian">Kembali</a>
+                        <a href="/dashboardkader" class="btn btn-info isian">Kembali</a>
                     </p>
                 </form>
             </div>

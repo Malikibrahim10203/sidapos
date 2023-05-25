@@ -129,7 +129,7 @@
                     <br>
                     <p>
                         <button type="submit" class="btn btn-success mt-3 isian">Ubah Balita</button>
-                        <a href="dashboardkader" class="btn btn-info isian">Kembali</a>
+                        <a href="/dashboardkader" class="btn btn-info isian">Kembali</a>
                     </p>
                 </form>
             

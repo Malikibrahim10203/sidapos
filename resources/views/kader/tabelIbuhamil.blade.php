@@ -96,7 +96,7 @@
                         
                         <td><?php echo $thn." tahun ".$bln." bulan ".$hr." hari"; ?></td>
                         <td>
-                            <a href="" class="btn btn-info">Ubah</a> 
+                            <a href="/ubahibuhamil/{{ $d->idibuhamil }}" class="btn btn-info">Ubah</a> 
                             |
                             <a href="" class="btn btn-danger">Hapus</a>
                         </td>

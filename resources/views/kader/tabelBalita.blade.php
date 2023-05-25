@@ -162,7 +162,7 @@
                         <td>
                             <a href="ubahbalita/{{ $d->idbalita }}" class="btn btn-info">Ubah</a> 
                             |
-                            <a href="" class="btn btn-danger">Hapus</a>
+                            <a href="hapusbalita/{{ $d->idbalita }}" class="btn btn-danger">Hapus</a>
                         </td>
                     </tr>
                     @endforeach

@@ -103,4 +103,29 @@ class KaderController extends Controller
 
         return redirect('tabelbalita');
     }
+
+    public function ubahibuhamil($id)
+    {
+        $data = DB::table('ibuhamil')->where('idibuhamil', $id)->first();
+
+        return view('kader/ubah/ubahibuhamil', ['data'=>$data]);
+    }
+
+    public function updateibuhamil(Request $request, $id)
+    {
+        DB::table('ibuhamil')->where('idibuhamil', $id)->update([
+            'namalengkap' => $request->namalengkap,
+            'alamat'      => $request->alamat,
+            'hpht'        => $request->hpht
+        ]);
+
+        return redirect('tabelibuhamil');
+    }
+
+    public function hapusbalita($id)
+    {
+        DB::table('balita')->where('idbalita', $id)->delete();
+
+        return redirect('tabelbalita');
+    }
 }
