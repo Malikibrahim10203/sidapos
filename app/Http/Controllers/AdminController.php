@@ -61,7 +61,10 @@ class AdminController extends Controller
 
     public function tabelmawar()
     {
-        return view('admin/tabelkader/tabelMawar');
+        $kadermawar = DB::table('users')
+            ->leftJoin('posyandu', 'users.idposyandu', '=', 'posyandu.idposyandu')->where('jabatan', '=', 'kader')->where('users.idposyandu', '=', '2')
+            ->get();
+        return view('admin/tabelkader/tabelMawar', ['kadermawar'=>$kadermawar]);
     }
     //
 
@@ -70,14 +73,14 @@ class AdminController extends Controller
         return view('admin/tabelkader/tabelbalaidesa');
     }
     //
-    public function ubahposyanduanggrek($id)
+    public function ubahposyandu($id)
     {
         $dataposyandu = DB::table('posyandu')->get();
         $data = DB::table('users')->where('id', $id)->first();
 
         return view('admin/tabelkader/ubah/ubahKader', ['data'=>$data, 'dataposyandu'=>$dataposyandu]);
     }
-    public function hapusposyanduanggrek($id)
+    public function hapusposyandu($id)
     {
         DB::table('users')->where('id', $id)->delete();
 

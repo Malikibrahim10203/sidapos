@@ -68,7 +68,18 @@
                         <th>Jabatan</th>
                         <th>Posyandu</th>
                     </tr>
-                    
+                    @foreach( $kadermawar as $d) 
+                    <tr>              
+                        <td>{{$d->namalengkap}}</td>
+                        <td>{{$d->email}}</td>
+                        <td>{{$d->jabatan}}</td>
+                        <td>{{$d->pos}}</td>
+                        <td>
+                            <a href="/ubahkader/{{ $d->id }}" class="btn btn-info">Edit</a>
+                            <a href="/hapuskader/{{ $d->id }}" class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                    @endforeach
                 </table>
             </div>
         </div>
