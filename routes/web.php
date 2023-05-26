@@ -35,6 +35,11 @@ Route::group(['middleware' => ['auth']], function()
         //
         Route::get('/tabelkaderbalaidesa', 'App\Http\Controllers\AdminController@tabelbalaidesa')->name('admin');
         //
+        Route::get('/ubahkader/{id}', 'App\Http\Controllers\AdminController@ubahposyanduanggrek')->name('admin');
+
+        Route::get('/hapuskader/{id}', 'App\Http\Controllers\AdminController@hapusposyanduanggrek')->name('admin');
+
+
 
 
 

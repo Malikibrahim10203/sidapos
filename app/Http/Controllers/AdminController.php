@@ -70,6 +70,17 @@ class AdminController extends Controller
         return view('admin/tabelkader/tabelbalaidesa');
     }
     //
+    public function ubahposyanduanggrek($id)
+    {
+        $dataposyandu = DB::table('posyandu')->get();
+        $data = DB::table('users')->where('id', $id)->first();
 
-    
+        return view('admin/tabelkader/ubah/ubahKader', ['data'=>$data, 'dataposyandu'=>$dataposyandu]);
+    }
+    public function hapusposyanduanggrek($id)
+    {
+        DB::table('users')->where('id', $id)->delete();
+
+        return redirect('/tabelkaderanggrek');
+    }
 }
