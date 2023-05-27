@@ -41,7 +41,7 @@ class AdminController extends Controller
         $data->idposyandu  = $request->pos;
         $data->save();
         
-        return redirect('dashboardadmin');
+        return redirect('tampiltambahkader')->with('success', 'Data berhasil di tambah');
     }
 
     public function viewtambah()
@@ -95,9 +95,9 @@ class AdminController extends Controller
         ]);
 
         if($data == '1') {
-            return redirect('/tabelkaderanggrek');
+            return redirect('/tabelkaderanggrek')->with('status_update', 'Data Berhasil Diubah');
         } else if($data == '2') {
-            return redirect('/tabelkadermawar');
+            return redirect('/tabelkadermawar')->with('status_update', 'Data Berhasil Diubah');
         } else {
             return redirect('/dashboardadmin');
         }
@@ -110,12 +110,12 @@ class AdminController extends Controller
         if($data->idposyandu == '1') {
 
             DB::table('users')->where('id', $id)->delete();
-            return redirect('/tabelkaderanggrek');
+            return redirect('/tabelkaderanggrek')->with('status_hapus', 'Data Kader Berhasil Dihapus');
 
         } else if($data->idposyandu == '2') {
 
             DB::table('users')->where('id', $id)->delete();
-            return redirect('/tabelkadermawar');
+            return redirect('/tabelkadermawar')->with('status_hapus', 'Data Kader Berhasil Dihapus');
 
         } else {
 

@@ -15,7 +15,7 @@
 </head>
 <body>
     <div class="sidebar p-4" id="sidebar">
-        <h3 class="mb-5 text-black"><a href="dashboardadmin">Sidapos</a></h3>
+        <h3 class="mb-5 text-black"><a href="/dashboardadmin">Sidapos</a></h3>
         <h5 class="mt-5">Menu</h5>
 
         <li>
@@ -46,8 +46,8 @@
             </div>
         </li>
         <li>
-            <a href="tampiltambahkader">
-                <i class="bi bi-person-plus mr-2 tombol"></i>
+            <a href="tampiltambahkader" class="btn btn-light">
+                <i class="bi bi-person-plus mr-2"></i>
                 Tambah data Kader  
             </a>
         </li>

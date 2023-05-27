@@ -16,7 +16,7 @@
 <body>
 
     <div class="sidebar p-4" id="sidebar">
-        <h3 class="mb-5 text-black"><a href="dashboardadmin">Sidapos</a></h3>
+        <h3 class="mb-5 text-black"><a href="/dashboardadmin">Sidapos</a></h3>
         <h5 class="mt-5">Menu</h5>
         <li>
             <div class="dropdown">
@@ -46,7 +46,7 @@
             </div>
         </li>
         <li>
-            <a href="tampiltambahkader">
+            <a href="tampiltambahkader" class="btn btn-light">
                 <i class="bi bi-person-plus mr-2"></i>
                 Tambah data Kader  
             </a>
@@ -70,7 +70,18 @@
     </section>
 
     <section class="p-4" id="main-content">
-        <div class="card mt-5">
+        
+        @if ( session('status_update'))
+            <div class="alert alert-success">
+                {{ session('status_update') }}
+            </div>
+        @elseif ( session('status_hapus'))
+            <div class="alert alert-danger">
+                {{ session('status_hapus') }}
+            </div>
+        @endif
+
+        <div class="card mt-2">
             <div class="card-body">
                 <a href="" class="btn btn-info">Cetak</a>
                 <table class="table mt-3">

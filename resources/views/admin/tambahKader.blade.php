@@ -15,6 +15,11 @@
         <div class="right">
             <h1 class="h1a">Sidapos</h1>
             <img src="{{asset('img/tambahkader.png')}}" alt="">
+            @if( session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
         </div>
         <div class="login">
             <h1 class="h1b">Tambah Kader</h1>
