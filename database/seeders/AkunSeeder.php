@@ -18,11 +18,11 @@ class AkunSeeder extends Seeder
         //
         $user = [
             [
-                'namalengkap'   => 'faris rahman',
-                'username'      => 'faris',
-                'email'         => 'faris@example.com',
-                'password'      =>  bcrypt('admin'),
-                'jabatan'       => 'admin',
+                'namalengkap'   => 'nurudin rahman',
+                'username'      => 'nurudin',
+                'email'         => 'nurudin@example.com',
+                'password'      =>  bcrypt('kader'),
+                'jabatan'       => 'kader',
                 'idposyandu'    => 1,
             ]
             ];

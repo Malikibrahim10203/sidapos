@@ -72,18 +72,86 @@ class AdminController extends Controller
     {
         return view('admin/tabelkader/tabelbalaidesa');
     }
+
     //
-    public function ubahposyandu($id)
+    public function ubahkader($id)
     {
         $dataposyandu = DB::table('posyandu')->get();
         $data = DB::table('users')->where('id', $id)->first();
 
         return view('admin/tabelkader/ubah/ubahKader', ['data'=>$data, 'dataposyandu'=>$dataposyandu]);
     }
-    public function hapusposyandu($id)
-    {
-        DB::table('users')->where('id', $id)->delete();
 
-        return redirect('/tabelkaderanggrek');
+    public function updatekader(Request $request, $id)
+    {
+        $data = $request->pos;
+
+        DB::table('users')->where('id', $id)->update([
+            'namalengkap'   => $request->namalengkap,
+            'username'      => $request->username,
+            'email'         => $request->email,
+            'password'      => bcrypt($request->password),
+            'idposyandu'    => $request->pos
+        ]);
+
+        if($data == '1') {
+            return redirect('/tabelkaderanggrek');
+        } else if($data == '2') {
+            return redirect('/tabelkadermawar');
+        } else {
+            return redirect('/dashboardadmin');
+        }
+    }
+
+    public function hapusposyandu(Request $request, $id)
+    {   
+        $data = DB::table('users')->where('id', $id)->first();
+
+        if($data->idposyandu == '1') {
+
+            DB::table('users')->where('id', $id)->delete();
+            return redirect('/tabelkaderanggrek');
+
+        } else if($data->idposyandu == '2') {
+
+            DB::table('users')->where('id', $id)->delete();
+            return redirect('/tabelkadermawar');
+
+        } else {
+
+            DB::table('users')->where('id', $id)->delete();
+            return redirect('/dashboardadmin');
+
+        }
+    }
+
+    public function tabelbalita($parameter)
+    {
+        if($parameter == 1){
+
+            $nama = 1;
+            $tabelbalita = DB::table('balita')->where('idposyandu', '=', 1)->get();
+            return view('admin/tabelbalita/tabelBalitaAnggrek', ['tabelbalita'=>$tabelbalita, 'nama'=>$nama]);
+        } else if($parameter == 2) {
+
+            $nama = 2;
+            $tabelbalita = DB::table('balita')->where('idposyandu', '=', 2)->get();
+            return view('admin/tabelbalita/tabelBalitaMawar', ['tabelbalita'=>$tabelbalita, 'nama'=>$nama]);
+        }
+    }
+
+    public function tabelibuhamil($parameter)
+    {
+        if($parameter == 1){
+
+            $nama = 1;
+            $tabelibuhamil = DB::table('ibuhamil')->where('idposyandu', '=', 1)->get();
+            return view('admin/tabelbumil/tabelIbuhamilAnggrek', ['tabelibuhamil'=>$tabelibuhamil, 'nama'=>$nama]);
+        } else if($parameter == 2) {
+
+            $nama = 2;
+            $tabelibuhamil = DB::table('ibuhamil')->where('idposyandu', '=', 2)->get();
+            return view('admin/tabelbumil/tabelIbuhamilMawar', ['tabelibuhamil'=>$tabelibuhamil, 'nama'=>$nama]);
+        }
     }
 }

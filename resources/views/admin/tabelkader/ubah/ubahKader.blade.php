@@ -18,7 +18,7 @@
         </div>
         <div class="login">
             <h1 class="h1b">Tambah Kader</h1>
-            <form action="simpan" method="post">
+            <form action="/updatekader/{{ $data->id }}" method="post">
                 @csrf
                 <label for="namalengkap">Nama Lengkap</label>
                 <input type="text" name="namalengkap" placeholder="nama lengkap" value="{{ $data->namalengkap }}" class="isian">
@@ -33,11 +33,15 @@
                 <input type="password" name="password" placeholder="password" value="{{ $data->password }}"class="isian">
                 <br>
                 <label for="pos">Pos</label>
-                
+                    <select name="pos" id="po" class="isian">
+                    @foreach($dataposyandu as $data1)
+                        <option value="{{ $data1->idposyandu }}">{{ $data1->pos }}</option>
+                    @endforeach
+                </select>
                 <br>
                 <p>
-                    <button type="submit" class="btn btn-success mt-3 isian">Tambah Kader</button>
-                    <a href="dashboardadmin" class="btn btn-info isian">Kembali</a>
+                    <button type="submit" class="btn btn-success mt-3 isian">Ubah Kader</button>
+                    <a href="/dashboardadmin" class="btn btn-info isian">Kembali</a>
                 </p>
             </form>
         </div>

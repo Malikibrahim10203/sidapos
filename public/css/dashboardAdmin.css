@@ -48,3 +48,12 @@ a {
     transition: 0.4s;
 }
 
+
+.tombol {
+    background:none;
+    border:none;
+    color:#FFF;
+    font-family:Verdana, Geneva, sans-serif;
+    cursor:pointer;
+}
+

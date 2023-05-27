@@ -21,21 +21,33 @@
         <li>
             <div class="dropdown">
                 <a class="btn btn-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Daftar Posyandu
+                    Posyandu Anggrek
                 </a>
 
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="tabelkaderanggrek">Posyandu Anggrek</a></li>
-                    <li><a class="dropdown-item" href="tabelkadermawar">Posyandu Mawar</a></li>
-                    <!-- mila -->
-                    <li><a class="dropdown-item" href="tabelkaderbalaidesa">Balai Desa</a></li>
-                    <!--  nama -->
+                    <li><a class="dropdown-item" href="/tabelkaderanggrek">Lihat data Kader</a></li>
+                    <li><a class="dropdown-item" href="/tabelbalitaadmin/{{ $parameter = 1 }}">Lihat data Balita</a></li>
+                    <li><a class="dropdown-item" href="/tabelibuhamiladmin/{{ $parameter = 1 }}">Lihat data Ibu Hamil</a></li>
+                </ul>
+            </div>
+        </li>
+
+        <li>
+            <div class="dropdown">
+                <a class="btn btn-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Posyandu Mawar
+                </a>
+
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/tabelkadermawar">Lihat data Kader</a></li>
+                    <li><a class="dropdown-item" href="/tabelbalitaadmin/{{ $parameter = 2 }}">Lihat data Balita</a></li>
+                    <li><a class="dropdown-item" href="/tabelibuhamiladmin/{{ $parameter = 2 }}">Lihat data Ibu Hamil</a></li>
                 </ul>
             </div>
         </li>
         <li>
             <a href="tampiltambahkader">
-                <i class="bi bi-person-plus mr-2"></i>
+                <i class="bi bi-person-plus mr-2 tombol"></i>
                 Tambah data Kader  
             </a>
         </li>

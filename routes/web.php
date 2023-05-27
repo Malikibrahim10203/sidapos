@@ -35,9 +35,15 @@ Route::group(['middleware' => ['auth']], function()
         //
         Route::get('/tabelkaderbalaidesa', 'App\Http\Controllers\AdminController@tabelbalaidesa')->name('admin');
         //
-        Route::get('/ubahkader/{id}', 'App\Http\Controllers\AdminController@ubahposyandu')->name('admin');
+        Route::get('/ubahkader/{id}', 'App\Http\Controllers\AdminController@ubahkader')->name('admin');
+        Route::post('/updatekader/{id}', 'App\Http\Controllers\AdminController@updatekader')->name('admin');
 
         Route::get('/hapuskader/{id}', 'App\Http\Controllers\AdminController@hapusposyandu')->name('admin');
+
+
+        // 
+        Route::get('/tabelbalitaadmin/{parameter}', 'App\Http\Controllers\AdminController@tabelbalita')->name('admin');
+        Route::get('/tabelibuhamiladmin/{parameter}', 'App\Http\Controllers\AdminController@tabelibuhamil')->name('admin');
 
 
 

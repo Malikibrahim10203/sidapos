@@ -9,7 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="{{asset('css/tabelAnggrek.css')}}">
+    <link rel="stylesheet" href="{{asset('css/tabelIbuhamil.css')}}">
     <script src="{{asset('js/dashboardAdmin.js')}}"></script>
     <title>Dashboard</title>
 </head>
@@ -62,7 +62,7 @@
                 </button>
 
                 <p>
-                    <a href="{{url('logout')}}"><i class="bi bi-box-arrow-right"></i> Keluar</a>
+                    <a href="{{url('logout')}}"><i class="bi bi-box-arrow-right"></i>Keluar</a>
                 </p>
             </div>
         </nav>
@@ -70,27 +70,51 @@
     </section>
 
     <section class="p-4" id="main-content">
+
         <div class="card mt-5">
+            <div class="card-body">
+                <?php 
+                                
+                    if ($nama == 1) {
+                        echo "<h2>Posyandu Anggrek Ibu Hamil</h2>";
+                    } else if($nama == 2) {
+                        echo "<h2>Posyandu Mawar Ibu Hamil</h2>";
+                    }
+                ?>
+            </div>
+        </div>
+        <div class="card mt-2">
             <div class="card-body">
                 <a href="" class="btn btn-info">Cetak</a>
                 <table class="table mt-3">
                     <tr>
-                        <th>Nama Kader</th>
-                        <th>Email</th>
-                        <th>Jabatan</th>
-                        <th>Posyandu</th>
+                        <th>Nama Lengkap</th>
+                        <th>Alamat</th>
+                        <th>Umur Kehamilan</th>
                     </tr>
-                    @foreach( $kaderanggrek as $d) 
-                    <tr>              
-                        <td>{{$d->namalengkap}}</td>
-                        <td>{{$d->email}}</td>
-                        <td>{{$d->jabatan}}</td>
-                        <td>{{$d->pos}}</td>
-                        <td>
-                            <a href="/ubahkader/{{ $d->id }}" class="btn btn-info">Edit</a>
-                            |
-                            <a href="/hapuskader/{{ $d->id }}" class="btn btn-danger">Delete</a>
-                        </td>
+
+                    @foreach($tabelibuhamil as $d)
+                    <tr>
+                        <td>{{ $d->namalengkap }}</td>
+                        <td>{{ $d->alamat }}</td>
+                        <?php 
+                        
+                            $tanggallahir = new DateTime( $d->hpht );
+                            $sekarang     = new DateTime("today");
+
+                            if($tanggallahir > $sekarang)
+                            {
+                                $thn = 0;
+                                $bln = 0;
+                                $hr = 0;
+                            }
+
+                            $thn = $sekarang->diff($tanggallahir)->y;
+                            $bln = $sekarang->diff($tanggallahir)->m;
+                            $hr = $sekarang->diff($tanggallahir)->d;
+                        ?>
+                        
+                        <td><?php echo $thn." tahun ".$bln." bulan ".$hr." hari"; ?></td>
                     </tr>
                     @endforeach
                 </table>

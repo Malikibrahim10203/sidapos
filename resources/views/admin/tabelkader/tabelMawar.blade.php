@@ -21,15 +21,27 @@
         <li>
             <div class="dropdown">
                 <a class="btn btn-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Daftar Posyandu
+                    Posyandu Anggrek
                 </a>
 
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="tabeladmin">Posyandu Anggrek</a></li>
-                    <li><a class="dropdown-item" href="tabelkadermawar">Posyandu Mawar</a></li>
-                    <!--  mila -->
-                    <li><a class="dropdown-item" href="tabelkaderbalaidesa">Balai Desa</a></li>
-                    <!--  nama -->
+                    <li><a class="dropdown-item" href="/tabelkaderanggrek">Lihat data Kader</a></li>
+                    <li><a class="dropdown-item" href="/tabelbalitaadmin/{{ $parameter = 1 }}">Lihat data Balita</a></li>
+                    <li><a class="dropdown-item" href="/tabelibuhamiladmin/{{ $parameter = 1 }}">Lihat data Ibu Hamil</a></li>
+                </ul>
+            </div>
+        </li>
+
+        <li>
+            <div class="dropdown">
+                <a class="btn btn-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Posyandu Mawar
+                </a>
+
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/tabelkadermawar">Lihat data Kader</a></li>
+                    <li><a class="dropdown-item" href="/tabelbalitaadmin/{{ $parameter = 2 }}">Lihat data Balita</a></li>
+                    <li><a class="dropdown-item" href="/tabelibuhamiladmin/{{ $parameter = 2 }}">Lihat data Ibu Hamil</a></li>
                 </ul>
             </div>
         </li>
@@ -76,6 +88,7 @@
                         <td>{{$d->pos}}</td>
                         <td>
                             <a href="/ubahkader/{{ $d->id }}" class="btn btn-info">Edit</a>
+                            |
                             <a href="/hapuskader/{{ $d->id }}" class="btn btn-danger">Delete</a>
                         </td>
                     </tr>

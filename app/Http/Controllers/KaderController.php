@@ -34,7 +34,6 @@ class KaderController extends Controller
         $data = $user->idposyandu;
 
         $tabelbalita = DB::table('balita')->where('idposyandu', '=', $data)->get();
-
         return view('kader/tabelBalita', ['tabelbalita'=>$tabelbalita]);
     }
 
