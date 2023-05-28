@@ -61,7 +61,7 @@ class KaderController extends Controller
         $data->idposyandu       = $user->idposyandu;
         $data->save();
 
-        return redirect('dashboardkader');
+        return redirect('/tabelbalita')->with('tambah', 'Tambah Data Balita Berhasil !!');
     }
 
     public function simpanibuhamil(Request $request)
@@ -75,7 +75,7 @@ class KaderController extends Controller
         $data->idposyandu       = $user->idposyandu;
         $data->save();
 
-        return redirect('dashboardkader');
+        return redirect('/tabelibuhamil')->with('tambah', 'Tambah Data Ibu Hamil Berhasil !!');
     }
     
 
@@ -100,7 +100,7 @@ class KaderController extends Controller
             'imunisasi_polio'       => $request->imunisasi_polio
         ]);
 
-        return redirect('tabelbalita');
+        return redirect('/tabelbalita')->with('ubah', 'Ubah Data Balita Berhasil !!');
     }
 
     public function ubahibuhamil($id)
@@ -118,13 +118,13 @@ class KaderController extends Controller
             'hpht'        => $request->hpht
         ]);
 
-        return redirect('tabelibuhamil');
+        return redirect('/tabelibuhamil')->with('ubah', 'Ubah Data Balita Berhasil !!');
     }
 
     public function hapusbalita($id)
     {
         DB::table('balita')->where('idbalita', $id)->delete();
 
-        return redirect('tabelbalita');
+        return redirect('tabelbalita')->with('hapus', 'Hapus Data Balita Berhasil !!');
     }
 }

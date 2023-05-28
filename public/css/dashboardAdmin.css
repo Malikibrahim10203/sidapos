@@ -57,3 +57,29 @@ a {
     cursor:pointer;
 }
 
+.status {
+    color: grey;
+    display: flex;
+}
+
+.status img {
+    width: 50px;
+    height: 50px;
+}
+
+.item {
+    margin: 10px;
+}
+
+.isi {
+    display: flex;
+}
+
+.jarak {
+    display: flex;
+    margin: 0 5px;
+}
+
+.icon {
+    bottom: 0;
+}

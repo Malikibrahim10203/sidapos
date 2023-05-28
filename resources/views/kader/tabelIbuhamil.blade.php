@@ -66,7 +66,7 @@
             <div class="card-body">
                 <a href="" class="btn btn-info">Cetak</a>
                 <table class="table mt-3">
-                    <tr>
+                    <tr class="judul">
                         <th>Nama Lengkap</th>
                         <th>Alamat</th>
                         <th>Umur Kehamilan</th>

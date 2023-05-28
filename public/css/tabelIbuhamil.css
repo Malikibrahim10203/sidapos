@@ -48,6 +48,9 @@ a {
     transition: 0.4s;
 }
 
-th {
+.judul {
+    border-radius: 3px;
     font-size: 12px;
+    color: white;
+    background-color: #00B0FF;
 }

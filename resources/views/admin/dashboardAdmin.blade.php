@@ -70,14 +70,41 @@
 
     <section class="p-4" id="main-content">
         <div class="container">
-        <div class="card mt-5">
-            <div class="card-body">
-                <p>
-                    <h2>Wellcome, </strong> {{ $data }} </h2>
-                </p>    
-                
+            <div class="card mt-5">
+                <div class="card-body">
+                    <p>
+                        <h2>Wellcome, </strong> {{ $data }} </h2>
+                    </p>    
+                </div>
             </div>
-        </div>
+
+            <div class="card mt-2">
+                <div class="card-body status">
+                    <div class="card mt-2 item" style="width: 18rem;">
+                        <div class="card-body jarak">
+                            <div class="container">
+                                <h5 class="card-title"><span class="badge text-bg-info">Kader Posyandu Anggrek</span></h5>
+                                <img src="{{ asset('img/member.png') }}" class="mt-3 icon">
+                            </div>
+                            <div class="jumlah">
+                                <h1>{{ $kaderanggrek }}</h1>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mt-2 item" style="width: 18rem;">
+                        <div class="card-body jarak">
+                            <div class="container">
+                                <h5 class="card-title"><span class="badge text-bg-info">Kader Posyandu Mawar</span></h5>
+                                <img src="{{ asset('img/member.png') }}" class="mt-3 icon">
+                            </div>
+                            <div class="jumlah">
+                                <h1>{{ $kadermawar }}</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     <script src="{{asset('js/dashboardAdmin.js')}}"></script>

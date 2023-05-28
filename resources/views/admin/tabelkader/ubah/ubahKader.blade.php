@@ -30,7 +30,7 @@
                 <input type="email" name="email" placeholder="example@exam.com" value="{{ $data->email }}"class="isian">
                 <br>         
                 <label for="password">Password</label>
-                <input type="password" name="password" placeholder="password" value="{{ $data->password }}"class="isian">
+                <input type="password" name="password" placeholder="password" class="isian">
                 <br>
                 <label for="pos">Pos</label>
                     <select name="pos" id="po" class="isian">

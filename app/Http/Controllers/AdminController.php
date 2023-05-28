@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Input;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use Illuminate\Database\Query\Builder;
 
 class AdminController extends Controller
 {
@@ -15,7 +16,14 @@ class AdminController extends Controller
     {
         $user = Auth::user();
         $data = $user->namalengkap;
-        return view('admin/dashboardAdmin', ['data'=>$data]);
+
+        $queryanggrek = DB::table('users')->where('idposyandu', 1)->get();
+        $kaderanggrek = count($queryanggrek);
+
+        $querymawar   = DB::table('users')->where('idposyandu', 2)->get();
+        $kadermawar   = count($querymawar);
+
+        return view('admin/dashboardAdmin', ['data'=>$data, 'kaderanggrek'=>$kaderanggrek, 'kadermawar'=>$kadermawar]);
     }
 
     public function simpan(Request $request)

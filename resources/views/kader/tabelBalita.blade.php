@@ -64,16 +64,29 @@
     <section class="p-4" id="main-content">
         <div class="card mt-5">
             <div class="card-body">
+                @if ( session('tambah') )
+                    <div class="alert alert-success">
+                        {{ session('tambah') }}
+                    </div>
+                @elseif ( session('ubah') )
+                    <div class="alert alert-success">
+                        {{ session('ubah') }}
+                    </div>
+                @elseif ( session('hapus') )
+                    <div class="alert alert-success">
+                        {{ session('hapus') }}
+                    </div>
+                @endif
                 <a href="" class="btn btn-info">Cetak</a>
-                <table class="table mt-3">
-                    <tr>
+                <table class="table mt-3" border="1">
+                    <tr class="judul">
                         <th rowspan="2">Nama Lengkap</th>
                         <th rowspan="2">Alamat</th>
                         <th rowspan="2">Umur</th>
                         <th colspan="5" style="text-align: center;">IMUNISASI</th>
                         <th rowspan="2" style="text-align: center;">Opsi</th>
                     </tr>
-                    <tr>
+                    <tr class="judul1">
                         <th>BCG</th>
                         <th>Campak</th>
                         <th>DPT HB HIB</th>
