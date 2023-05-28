@@ -56,7 +56,7 @@
                 </button>
 
                 <p>
-                    <a href="{{url('logout')}}"><i class="bi bi-box-arrow-right"></i>Keluar</a>
+                    <a href="{{url('logout')}}" class="btn btn-danger"><i class="bi bi-box-arrow-right"></i>Keluar</a>
                 </p>
             </div>
         </nav>

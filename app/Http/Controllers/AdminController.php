@@ -138,12 +138,16 @@ class AdminController extends Controller
         if($parameter == 1){
 
             $nama = 1;
-            $tabelbalita = DB::table('balita')->where('idposyandu', '=', 1)->get();
+            $tabelbalita = DB::table('balita')
+                ->leftJoin('jeniskelamin', 'balita.id_jk', '=', 'jeniskelamin.id_jk')->where('idposyandu', '=', 1)
+                ->get();                                                                                
             return view('admin/tabelbalita/tabelBalitaAnggrek', ['tabelbalita'=>$tabelbalita, 'nama'=>$nama]);
         } else if($parameter == 2) {
 
             $nama = 2;
-            $tabelbalita = DB::table('balita')->where('idposyandu', '=', 2)->get();
+            $tabelbalita = DB::table('balita')
+                ->leftJoin('jeniskelamin', 'balita.id_jk', '=', 'jeniskelamin.id_jk')->where('idposyandu', '=', 2)
+                ->get();
             return view('admin/tabelbalita/tabelBalitaMawar', ['tabelbalita'=>$tabelbalita, 'nama'=>$nama]);
         }
     }
@@ -153,12 +157,16 @@ class AdminController extends Controller
         if($parameter == 1){
 
             $nama = 1;
-            $tabelibuhamil = DB::table('ibuhamil')->where('idposyandu', '=', 1)->get();
+            $tabelibuhamil = DB::table('ibuhamil')
+                ->leftJoin('status', 'ibuhamil.id_status', '=', 'status.id_status')->where('idposyandu', '=', 1)
+                ->get();
             return view('admin/tabelbumil/tabelIbuhamilAnggrek', ['tabelibuhamil'=>$tabelibuhamil, 'nama'=>$nama]);
         } else if($parameter == 2) {
 
             $nama = 2;
-            $tabelibuhamil = DB::table('ibuhamil')->where('idposyandu', '=', 2)->get();
+            $tabelibuhamil = DB::table('ibuhamil')
+                ->leftJoin('status', 'ibuhamil.id_status', '=', 'status.id_status')->where('idposyandu', '=', 2)
+                ->get();
             return view('admin/tabelbumil/tabelIbuhamilMawar', ['tabelibuhamil'=>$tabelibuhamil, 'nama'=>$nama]);
         }
     }

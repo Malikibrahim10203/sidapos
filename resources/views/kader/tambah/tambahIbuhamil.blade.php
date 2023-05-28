@@ -52,7 +52,7 @@
                 </button>
 
                 <p>
-                    <a href="{{url('logout')}}"><i class="bi bi-box-arrow-right"></i>Keluar</a>
+                    <a href="{{url('logout')}}" class="btn btn-danger"><i class="bi bi-box-arrow-right"></i>Keluar</a>
                 </p>
             </div>
         </nav>
@@ -75,6 +75,16 @@
                     <br>
                     <label for="hpht">HPHT</label>
                     <input type="date" name="hpht" placeholder="hpht" class="isian" required>
+                    <br>
+                    <br>
+                    <label for="status">Status</label>
+                    <select name="status" id="status" class="isian">
+                        
+                            <option value="1">Belum Lahir</option>
+                            <option value="2">Lahir</option>
+                            
+                        
+                    </select>
                     <br>
                     <br>
                     <p>

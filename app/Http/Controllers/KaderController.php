@@ -33,7 +33,9 @@ class KaderController extends Controller
         $user = Auth::user();
         $data = $user->idposyandu;
 
-        $tabelbalita = DB::table('balita')->where('idposyandu', '=', $data)->get();
+        $tabelbalita = DB::table('balita')
+                ->leftJoin('jeniskelamin', 'balita.id_jk', '=', 'jeniskelamin.id_jk')->where('idposyandu', '=', $data)
+                ->get();
         return view('kader/tabelBalita', ['tabelbalita'=>$tabelbalita]);
     }
 
@@ -41,7 +43,9 @@ class KaderController extends Controller
         $user = Auth::user();
         $data = $user->idposyandu;
 
-        $tabelibuhamil = DB::table('ibuhamil')->where('idposyandu', '=', $data)->get();
+        $tabelibuhamil = DB::table('ibuhamil')
+                ->leftJoin('status', 'ibuhamil.id_status', '=', 'status.id_status')->where('idposyandu', '=', $data)
+                ->get();
         return view('kader/tabelIbuhamil', ['tabelibuhamil'=>$tabelibuhamil]);
     }
 
@@ -59,6 +63,7 @@ class KaderController extends Controller
         $data->imunisasi_hepatitis_b = $request->imunisasi_hepatitis;
         $data->imunisasi_polio       = $request->imunisasi_polio;
         $data->idposyandu       = $user->idposyandu;
+        $data->id_jk            = $request->kelamin;
         $data->save();
 
         return redirect('/tabelbalita')->with('tambah', 'Tambah Data Balita Berhasil !!');
@@ -73,6 +78,7 @@ class KaderController extends Controller
         $data->hpht             = $request->hpht;
         $data->alamat           = $request->alamat;
         $data->idposyandu       = $user->idposyandu;
+        $data->id_status        = $request->status;
         $data->save();
 
         return redirect('/tabelibuhamil')->with('tambah', 'Tambah Data Ibu Hamil Berhasil !!');
@@ -81,7 +87,10 @@ class KaderController extends Controller
 
     public function ubahbalita($id)
     {
-        $data = DB::table('balita')->where('idbalita', $id)->first();
+        $data = DB::table('balita')
+                ->leftJoin('jeniskelamin', 'balita.id_jk', '=', 'jeniskelamin.id_jk')->where('idbalita', $id)
+                ->first();
+        
 
         return view('kader/ubah/ubahBalita', ['data'=>$data]);
     }
@@ -97,7 +106,8 @@ class KaderController extends Controller
             'imunisasi_campak' => $request->imunisasi_campak,
             'imunisasi_dpt_hb_hib'  => $request->imunisasi_dpt,
             'imunisasi_hepatitis_b' => $request->imunisasi_hepatitis,
-            'imunisasi_polio'       => $request->imunisasi_polio
+            'imunisasi_polio'       => $request->imunisasi_polio,
+            'id_jk'            => $request->kelamin
         ]);
 
         return redirect('/tabelbalita')->with('ubah', 'Ubah Data Balita Berhasil !!');
@@ -105,7 +115,9 @@ class KaderController extends Controller
 
     public function ubahibuhamil($id)
     {
-        $data = DB::table('ibuhamil')->where('idibuhamil', $id)->first();
+        $data = DB::table('ibuhamil')
+                ->leftJoin('status', 'ibuhamil.id_status', '=', 'status.id_status')->where('idibuhamil', $id)
+                ->first();
 
         return view('kader/ubah/ubahibuhamil', ['data'=>$data]);
     }
@@ -115,7 +127,8 @@ class KaderController extends Controller
         DB::table('ibuhamil')->where('idibuhamil', $id)->update([
             'namalengkap' => $request->namalengkap,
             'alamat'      => $request->alamat,
-            'hpht'        => $request->hpht
+            'hpht'        => $request->hpht,
+            'id_status'   => $request->status
         ]);
 
         return redirect('/tabelibuhamil')->with('ubah', 'Ubah Data Balita Berhasil !!');

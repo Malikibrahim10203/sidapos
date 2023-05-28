@@ -54,7 +54,7 @@
                 </button>
 
                 <p>
-                    <a href="{{url('logout')}}"><i class="bi bi-box-arrow-right"></i>Keluar</a>
+                    <a href="{{url('logout')}}" class="btn btn-danger"><i class="bi bi-box-arrow-right"></i>Keluar</a>
                 </p>
             </div>
         </nav>
@@ -65,11 +65,12 @@
         <div class="card mt-5">
             <div class="card-body">
                 <a href="" class="btn btn-info">Cetak</a>
-                <table class="table mt-3">
+                <table class="table mt-3 table-bordered" border="1">
                     <tr class="judul">
                         <th>Nama Lengkap</th>
                         <th>Alamat</th>
                         <th>Umur Kehamilan</th>
+                        <th>Status</th>
                         <th>Opsi</th>
                     </tr>
 
@@ -95,6 +96,7 @@
                         ?>
                         
                         <td><?php echo $thn." tahun ".$bln." bulan ".$hr." hari"; ?></td>
+                        <td>{{ $d->status}}</td>
                         <td>
                             <a href="/ubahibuhamil/{{ $d->idibuhamil }}" class="btn btn-info">Ubah</a> 
                             |

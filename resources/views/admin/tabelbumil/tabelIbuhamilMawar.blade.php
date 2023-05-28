@@ -86,11 +86,12 @@
         <div class="card mt-2">
             <div class="card-body">
                 <a href="" class="btn btn-info">Cetak</a>
-                <table class="table mt-3">
-                    <tr>
+                <table class="table mt-3 table-bordered">
+                    <tr class="judul">
                         <th>Nama Lengkap</th>
                         <th>Alamat</th>
                         <th>Umur Kehamilan</th>
+                        <th>Status</th>
                     </tr>
 
                     @foreach($tabelibuhamil as $d)
@@ -115,6 +116,7 @@
                         ?>
                         
                         <td><?php echo $thn." tahun ".$bln." bulan ".$hr." hari"; ?></td>
+                        <td>{{ $d->status}}</td>
                     </tr>
                     @endforeach
                 </table>

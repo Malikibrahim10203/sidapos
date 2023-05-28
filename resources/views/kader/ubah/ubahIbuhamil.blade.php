@@ -23,8 +23,8 @@
                 </a>
 
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="tambahbalita">Tambah data Balita</a></li>
-                    <li><a class="dropdown-item" href="tambahibuhamil">Tambah data Ibu Hamil</a></li>
+                    <li><a class="dropdown-item" href="/tambahbalita">Tambah data Balita</a></li>
+                    <li><a class="dropdown-item" href="/tambahibuhamil">Tambah data Ibu Hamil</a></li>
                 </ul>
             </div>
         </li>
@@ -36,8 +36,8 @@
                 </a>
 
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="tabelbalita">Lihat data Balita</a></li>
-                    <li><a class="dropdown-item" href="tabelibuhamil">Lihat data Ibu Hamil</a></li>
+                    <li><a class="dropdown-item" href="/tabelbalita">Lihat data Balita</a></li>
+                    <li><a class="dropdown-item" href="/tabelibuhamil">Lihat data Ibu Hamil</a></li>
                 </ul>
             </div>
         </li>
@@ -52,7 +52,7 @@
                 </button>
 
                 <p>
-                    <a href="{{url('logout')}}"><i class="bi bi-box-arrow-right"></i>Keluar</a>
+                    <a href="{{url('logout')}}" class="btn btn-danger"><i class="bi bi-box-arrow-right"></i>Keluar</a>
                 </p>
             </div>
         </nav>
@@ -63,7 +63,7 @@
         <div class="container">
             <div class="card mt-5">
                 <form action="/updateibuhamil/{{ $data->idibuhamil }}" method="post">
-                    <h1 class="h1b">Tambah Ibu Hamil</h1>
+                    <h1 class="h1b">Ubah Ibu Hamil</h1>
                     @csrf
                     <label for="namalengkap">Nama Lengkap</label>
                     <input type="text" name="namalengkap" placeholder="nama lengkap" value="{{ $data->namalengkap }}" class="isian" required>
@@ -75,6 +75,16 @@
                     <br>
                     <label for="hpht">HPHT</label>
                     <input type="date" name="hpht" placeholder="hpht" value="{{ $data->hpht }}" class="isian" required>
+                    <br>
+                    <br>
+                    <label for="status">Status</label>
+                    <select name="status" id="status" class="isian">
+                        
+                            <option value="1" {{ $data->status == 'Belum lahir'? 'selected': '' }}>Belum Lahir</option>
+                            <option value="2" {{ $data->status == 'Lahir'? 'selected': '' }}>Lahir</option>
+                            
+                        
+                    </select>
                     <br>
                     <br>
                     <p>

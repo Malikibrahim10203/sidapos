@@ -48,3 +48,10 @@ a {
     transition: 0.4s;
 }
 
+.judul {
+    border-radius: 3px;
+    font-size: 13px;
+    color: white;
+    background-color: #00B0FF;
+}
+

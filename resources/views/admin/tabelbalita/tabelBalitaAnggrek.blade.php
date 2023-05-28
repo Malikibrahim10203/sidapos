@@ -62,7 +62,7 @@
                 </button>
 
                 <p>
-                    <a href="{{url('logout')}}"><i class="bi bi-box-arrow-right"></i>Keluar</a>
+                    <a href="{{url('logout')}}" class="btn btn-danger"><i class="bi bi-box-arrow-right"></i>Keluar</a>
                 </p>
             </div>
         </nav>
@@ -86,14 +86,15 @@
         <div class="card mt-2">
             <div class="card-body">
                 <a href="" class="btn btn-info">Cetak</a>
-                <table class="table mt-3">
-                    <tr>
+                <table class="table mt-3 table-bordered">
+                    <tr class="judul">
                         <th rowspan="2">Nama Lengkap</th>
                         <th rowspan="2">Alamat</th>
                         <th rowspan="2">Umur</th>
                         <th colspan="5" style="text-align: center;">IMUNISASI</th>
+                        <th rowspan="2">Jenis Kelamin</th>
                     </tr>
-                    <tr>
+                    <tr class="judul">
                         <th>BCG</th>
                         <th>Campak</th>
                         <th>DPT HB HIB</th>
@@ -179,6 +180,7 @@
                                 }
                             ?>
                         </td>
+                        <td>{{ $d->kelamin }}</td>
                     </tr>
                     @endforeach
                 </table>

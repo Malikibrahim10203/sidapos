@@ -23,8 +23,8 @@
                 </a>
 
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="tambahbalita">Tambah data Balita</a></li>
-                    <li><a class="dropdown-item" href="tambahibuhamil">Tambah data Ibu Hamil</a></li>
+                    <li><a class="dropdown-item" href="/tambahbalita">Tambah data Balita</a></li>
+                    <li><a class="dropdown-item" href="/tambahibuhamil">Tambah data Ibu Hamil</a></li>
                 </ul>
             </div>
         </li>
@@ -36,8 +36,8 @@
                 </a>
 
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="tabelbalita">Lihat data Balita</a></li>
-                    <li><a class="dropdown-item" href="tabelibuhamil">Lihat data Ibu Hamil</a></li>
+                    <li><a class="dropdown-item" href="/tabelbalita">Lihat data Balita</a></li>
+                    <li><a class="dropdown-item" href="/tabelibuhamil">Lihat data Ibu Hamil</a></li>
                 </ul>
             </div>
         </li>
@@ -52,7 +52,7 @@
                 </button>
 
                 <p>
-                    <a href="{{url('logout')}}"><i class="bi bi-box-arrow-right"></i>Keluar</a>
+                    <a href="{{url('logout')}}" class="btn btn-danger"><i class="bi bi-box-arrow-right"></i>Keluar</a>
                 </p>
             </div>
         </nav>
@@ -122,6 +122,16 @@
                         
                             <option value="belum" {{ $data->imunisasi_polio == 'belum'? 'selected': '' }}>Belum Vaksin</option>
                             <option value="sudah" {{ $data->imunisasi_polio == 'sudah'? 'selected': '' }}>Sudah Vaksin</option>
+                            
+                        
+                    </select>
+                    <br>
+                    <br>
+                    <label for="kelamin">Jenis Kelamin</label>
+                    <select name="kelamin" id="kelamin" class="isian">
+                        
+                            <option value="1" {{ $data->id_jk == '1'? 'selected': '' }}>Laki - Laki</option>
+                            <option value="2" {{ $data->id_jk == '2'? 'selected': '' }}>Perempuan</option>
                             
                         
                     </select>

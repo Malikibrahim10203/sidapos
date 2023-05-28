@@ -54,7 +54,7 @@
                 </button>
 
                 <p>
-                    <a href="{{url('logout')}}"><i class="bi bi-box-arrow-right"></i>Keluar</a>
+                    <a href="{{url('logout')}}" class="btn btn-danger"><i class="bi bi-box-arrow-right"></i>Keluar</a>
                 </p>
             </div>
         </nav>
@@ -78,13 +78,14 @@
                     </div>
                 @endif
                 <a href="" class="btn btn-info">Cetak</a>
-                <table class="table mt-3" border="1">
+                <table class="table mt-3 table-bordered" border="1">
                     <tr class="judul">
                         <th rowspan="2">Nama Lengkap</th>
-                        <th rowspan="2">Alamat</th>
+                        <th rowspan="2" width="20px">Alamat</th>
                         <th rowspan="2">Umur</th>
                         <th colspan="5" style="text-align: center;">IMUNISASI</th>
-                        <th rowspan="2" style="text-align: center;">Opsi</th>
+                        <th rowspan="2">Jenis Kelamin</th>
+                        <th rowspan="2" style="text-align: center;" width="15%">Opsi</th>
                     </tr>
                     <tr class="judul1">
                         <th>BCG</th>
@@ -172,6 +173,7 @@
                                 }
                             ?>
                         </td>
+                        <td>{{ $d->kelamin}}</td>
                         <td>
                             <a href="ubahbalita/{{ $d->idbalita }}" class="btn btn-info">Ubah</a> 
                             |

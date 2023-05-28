@@ -62,7 +62,7 @@
                 </button>
 
                 <p>
-                    <a href="{{url('logout')}}"><i class="bi bi-box-arrow-right"></i>Keluar</a>
+                    <a href="{{url('logout')}}" class="btn btn-danger"><i class="bi bi-box-arrow-right"></i>Keluar</a>
                 </p>
             </div>
         </nav>
@@ -82,12 +82,13 @@
         <div class="card mt-2">
             <div class="card-body">
                 <a href="" class="btn btn-info">Cetak</a>
-                <table class="table mt-3">
-                    <tr>
+                <table class="table mt-3 table-bordered">
+                    <tr class="judul">
                         <th>Nama Kader</th>
                         <th>Email</th>
                         <th>Jabatan</th>
                         <th>Posyandu</th>
+                        <th>Opsi</th>
                     </tr>
                     @foreach( $kadermawar as $d) 
                     <tr>              

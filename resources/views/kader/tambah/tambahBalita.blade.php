@@ -52,7 +52,7 @@
                 </button>
 
                 <p>
-                    <a href="{{url('logout')}}"><i class="bi bi-box-arrow-right"></i>Keluar</a>
+                    <a href="{{url('logout')}}" class="btn btn-danger"><i class="bi bi-box-arrow-right"></i>Keluar</a>
                 </p>
             </div>
         </nav>
@@ -122,6 +122,16 @@
                         
                             <option value="belum">Belum Vaksin</option>
                             <option value="sudah">Sudah Vaksin</option>
+                            
+                        
+                    </select>
+                    <br>
+                    <br>
+                    <label for="kelamin">Jenis Kelamin</label>
+                    <select name="kelamin" id="kelamin" class="isian">
+                        
+                            <option value="1">Laki - Laki</option>
+                            <option value="2">Perempuan</option>
                             
                         
                     </select>
