@@ -14,39 +14,61 @@ class KaderController extends Controller
     //
     public function index()
     {   
-        $user = Auth::user();
-        $data = $user->namalengkap;
-        return view('kader/dashboardKader', ['data'=>$data]);
+        if(!Auth::check()) {
+            return redirect('login');
+        } else {
+            $user = Auth::user();
+            $data = $user->namalengkap;
+            return view('kader/dashboardKader', ['data'=>$data]);
+        }
     }
 
     public function tambahbalita()
     {
-        return view('kader/tambah/tambahBalita');
+        if(!Auth::check()) {
+            return redirect('login');
+        } else {
+            return view('kader/tambah/tambahBalita');
+        }
     }
 
     public function tambahibuhamil()
     {
-        return view('kader/tambah/tambahIbuhamil');
+        if(!Auth::check()) {
+            return redirect('login');
+        } else {
+            return view('kader/tambah/tambahIbuhamil');
+        }
     }
     
-    public function tabelbalita() {
-        $user = Auth::user();
-        $data = $user->idposyandu;
+    public function tabelbalita() 
+    {
+        if(!Auth::check()) {
+            return redirect('login');
+        } else {
+            $user = Auth::user();
+            $data = $user->idposyandu;
 
-        $tabelbalita = DB::table('balita')
-                ->leftJoin('jeniskelamin', 'balita.id_jk', '=', 'jeniskelamin.id_jk')->where('idposyandu', '=', $data)
-                ->get();
-        return view('kader/tabelBalita', ['tabelbalita'=>$tabelbalita]);
+            $tabelbalita = DB::table('balita')
+                    ->leftJoin('jeniskelamin', 'balita.id_jk', '=', 'jeniskelamin.id_jk')->where('idposyandu', '=', $data)
+                    ->get();
+            return view('kader/tabelBalita', ['tabelbalita'=>$tabelbalita]);
+        }
     }
 
-    public function tabelibuhamil() {
-        $user = Auth::user();
-        $data = $user->idposyandu;
-
-        $tabelibuhamil = DB::table('ibuhamil')
-                ->leftJoin('status', 'ibuhamil.id_status', '=', 'status.id_status')->where('idposyandu', '=', $data)
-                ->get();
-        return view('kader/tabelIbuhamil', ['tabelibuhamil'=>$tabelibuhamil]);
+    public function tabelibuhamil() 
+    {
+        if(!Auth::check()) {
+            return redirect('login');
+        } else {
+            $user = Auth::user();
+            $data = $user->idposyandu;
+    
+            $tabelibuhamil = DB::table('ibuhamil')
+                    ->leftJoin('status', 'ibuhamil.id_status', '=', 'status.id_status')->where('idposyandu', '=', $data)
+                    ->get();
+            return view('kader/tabelIbuhamil', ['tabelibuhamil'=>$tabelibuhamil]);
+        }
     }
 
     public function simpanbalita(Request $request)
@@ -86,13 +108,17 @@ class KaderController extends Controller
     
 
     public function ubahbalita($id)
-    {
-        $data = DB::table('balita')
+    {   
+        if(!Auth::check()) {
+            return redirect('login');
+        } else {
+            $data = DB::table('balita')
                 ->leftJoin('jeniskelamin', 'balita.id_jk', '=', 'jeniskelamin.id_jk')->where('idbalita', $id)
-                ->first();
+                ->first();                                                      
+    
+            return view('kader/ubah/ubahBalita', ['data'=>$data]);
+        }
         
-
-        return view('kader/ubah/ubahBalita', ['data'=>$data]);
     }
 
     public function updatebalita(Request $request, $id)
@@ -115,11 +141,16 @@ class KaderController extends Controller
 
     public function ubahibuhamil($id)
     {
-        $data = DB::table('ibuhamil')
+        if(!Auth::check()) {
+            return redirect('login');
+        } else {
+            $data = DB::table('ibuhamil')
                 ->leftJoin('status', 'ibuhamil.id_status', '=', 'status.id_status')->where('idibuhamil', $id)
                 ->first();
 
-        return view('kader/ubah/ubahibuhamil', ['data'=>$data]);
+            return view('kader/ubah/ubahibuhamil', ['data'=>$data]);
+        }
+
     }
 
     public function updateibuhamil(Request $request, $id)
@@ -136,8 +167,13 @@ class KaderController extends Controller
 
     public function hapusbalita($id)
     {
-        DB::table('balita')->where('idbalita', $id)->delete();
+        if(!Auth::check()) {
+            return redirect('login');
+        } else {
+            DB::table('balita')->where('idbalita', $id)->delete();
 
-        return redirect('tabelbalita')->with('hapus', 'Hapus Data Balita Berhasil !!');
+            return redirect('tabelbalita')->with('hapus', 'Hapus Data Balita Berhasil !!');
+        }
+        
     }
 }

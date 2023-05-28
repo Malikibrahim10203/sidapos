@@ -62,7 +62,7 @@
                 </button>
 
                 <p>
-                    <a href="{{url('logout')}}"><i class="bi bi-box-arrow-right"></i>Keluar</a>
+                    <a href="{{url('logout')}}" class="btn btn-danger"><i class="bi bi-box-arrow-right"></i>Keluar</a>
                 </p>
             </div>
         </nav>
@@ -70,7 +70,6 @@
     </section>
 
     <section class="p-4" id="main-content">
-
         <div class="card mt-5">
             <div class="card-body">
                 <?php 
@@ -88,14 +87,16 @@
                 <a href="" class="btn btn-info">Cetak</a>
                 <table class="table mt-3 table-bordered">
                     <tr class="judul">
+                        <th>No</th>
                         <th>Nama Lengkap</th>
                         <th>Alamat</th>
                         <th>Umur Kehamilan</th>
                         <th>Status</th>
                     </tr>
-
+                    <?php $no = 1;?>
                     @foreach($tabelibuhamil as $d)
                     <tr>
+                        <td><?php echo $no; ?>.</td>
                         <td>{{ $d->namalengkap }}</td>
                         <td>{{ $d->alamat }}</td>
                         <?php 
@@ -117,6 +118,7 @@
                         
                         <td><?php echo $thn." tahun ".$bln." bulan ".$hr." hari"; ?></td>
                         <td>{{ $d->status}}</td>
+                        <?php $no++;?>
                     </tr>
                     @endforeach
                 </table>
