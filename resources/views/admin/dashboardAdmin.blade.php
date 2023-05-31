@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="{{asset('css/dashboardAdmin.css')}}">
     <script src="{{asset('js/dashboardAdmin.js')}}"></script>
-    <title>Dashboard</title>
+    
+    <title>{{ $head }}</title>
 </head>
 <body>
     <div class="sidebar p-4" id="sidebar">
@@ -21,13 +22,14 @@
         <li>
             <div class="dropdown">
                 <a class="btn btn-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-hospital"></i>
                     Posyandu Anggrek
                 </a>
 
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="/tabelkaderanggrek">Lihat data Kader</a></li>
-                    <li><a class="dropdown-item" href="/tabelbalitaadmin/{{ $parameter = 1 }}">Lihat data Balita</a></li>
-                    <li><a class="dropdown-item" href="/tabelibuhamiladmin/{{ $parameter = 1 }}">Lihat data Ibu Hamil</a></li>
+                    <li><a class="dropdown-item" href="/tabelkaderanggrek"> <i class="bi bi-eye"></i> Lihat data Kader</a></li>
+                    <li><a class="dropdown-item" href="/tabelbalitaadmin/{{ $parameter = 1 }}"> <i class="bi bi-eye"></i> Lihat data Balita</a></li>
+                    <li><a class="dropdown-item" href="/tabelibuhamiladmin/{{ $parameter = 1 }}"> <i class="bi bi-eye"></i> Lihat data Ibu Hamil</a></li>
                 </ul>
             </div>
         </li>
@@ -35,13 +37,14 @@
         <li>
             <div class="dropdown">
                 <a class="btn btn-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-hospital"></i>
                     Posyandu Mawar
                 </a>
 
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="/tabelkadermawar">Lihat data Kader</a></li>
-                    <li><a class="dropdown-item" href="/tabelbalitaadmin/{{ $parameter = 2 }}">Lihat data Balita</a></li>
-                    <li><a class="dropdown-item" href="/tabelibuhamiladmin/{{ $parameter = 2 }}">Lihat data Ibu Hamil</a></li>
+                    <li><a class="dropdown-item" href="/tabelkadermawar"> <i class="bi bi-eye"></i> Lihat data Kader</a></li>
+                    <li><a class="dropdown-item" href="/tabelbalitaadmin/{{ $parameter = 2 }}"> <i class="bi bi-eye"></i> Lihat data Balita</a></li>
+                    <li><a class="dropdown-item" href="/tabelibuhamiladmin/{{ $parameter = 2 }}"> <i class="bi bi-eye"></i> Lihat data Ibu Hamil</a></li>
                 </ul>
             </div>
         </li>

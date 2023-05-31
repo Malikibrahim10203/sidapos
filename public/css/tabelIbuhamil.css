@@ -10,6 +10,7 @@ li {
 
 a {
     text-decoration: none;
+    color: white;
 }
 
 .sidebar {
@@ -54,3 +55,4 @@ a {
     color: white;
     background-color: #00B0FF;
 }
+

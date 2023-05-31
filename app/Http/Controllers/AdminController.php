@@ -23,7 +23,9 @@ class AdminController extends Controller
         $querymawar   = DB::table('users')->where('idposyandu', 2)->get();
         $kadermawar   = count($querymawar);
 
-        return view('admin/dashboardAdmin', ['data'=>$data, 'kaderanggrek'=>$kaderanggrek, 'kadermawar'=>$kadermawar]);
+        $head         = 'Dashboard | Admin';
+
+        return view('admin/dashboardAdmin', ['data'=>$data, 'kaderanggrek'=>$kaderanggrek, 'kadermawar'=>$kadermawar, 'head'=>$head]);
     }
 
     public function simpan(Request $request)

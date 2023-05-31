@@ -21,6 +21,7 @@
         <li>
             <div class="dropdown">
                 <a class="btn btn-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-hospital"></i>
                     Posyandu Anggrek
                 </a>
 
@@ -35,6 +36,7 @@
         <li>
             <div class="dropdown">
                 <a class="btn btn-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-hospital"></i>
                     Posyandu Mawar
                 </a>
 
@@ -76,16 +78,16 @@
                 <?php 
                                 
                     if ($nama == 1) {
-                        echo "<h2>Posyandu Anggrek Balita</h2>";
+                        echo "<h2 style='color: #27374D;'>Posyandu Anggrek Balita</h2>";
                     } else if($nama == 2) {
-                        echo "<h2>Posyandu Mawar Balita</h2>";
+                        echo "<h2 style='color: #27374D;'>Posyandu Mawar Balita</h2>";
                     }
                 ?>
             </div>
         </div>
         <div class="card mt-2">
             <div class="card-body">
-                <a href="" class="btn btn-info">Cetak</a>
+                <a href="" class="btn btn-info"> <i class="bi bi-printer"></i> Cetak</a>
                 <table class="table mt-3 table-bordered">
                     <tr class="judul">
                         <th rowspan="2">Nama Lengkap</th>

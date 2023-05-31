@@ -11,7 +11,7 @@
 </head>
 <body>
 
-    <div class="container mt-5">
+    <div class="container">
 
         <div class="right">
             <h1 class="h1a">Sidapos</h1>
@@ -40,13 +40,13 @@
                 <p>
                     <button type="submit" class="btn btn-success mt-3">Login</button>
                 </p>
-                <p class="forget mt-2">
-                    Lupa Password?
-                    <a href="#">Reset Password.</a>
-                </p>
             </form>
         </div>
-
+    </div>
+    
+    <div class="text-center p-3 footer">
+        © 2020 Copyright:
+        <a class="text-dark" href="https://mdbootstrap.com/">Kelompok 1</a>
     </div>
 </body>
 </html>

@@ -64,14 +64,14 @@
     <section class="p-4" id="main-content">
         <div class="card mt-5">
             <div class="card-body">
-                <a href="" class="btn btn-info">Cetak</a>
+                <a href="" class="btn btn-info"> <i class="bi bi-printer"></i> Cetak</a>
                 <table class="table mt-3 table-bordered" border="1">
                     <tr class="judul">
                         <th>Nama Lengkap</th>
                         <th>Alamat</th>
                         <th>Umur Kehamilan</th>
                         <th>Status</th>
-                        <th>Opsi</th>
+                        <th width="20%">Opsi</th>
                     </tr>
 
                     @foreach($tabelibuhamil as $d)
@@ -98,9 +98,9 @@
                         <td><?php echo $thn." tahun ".$bln." bulan ".$hr." hari"; ?></td>
                         <td>{{ $d->status}}</td>
                         <td>
-                            <a href="/ubahibuhamil/{{ $d->idibuhamil }}" class="btn btn-info">Ubah</a> 
+                            <a href="/ubahibuhamil/{{ $d->idibuhamil }}" class="btn btn-info"> <i class="bi bi-pencil-square"></i> Ubah</a> 
                             |
-                            <a href="" class="btn btn-danger">Hapus</a>
+                            <a href="" class="btn btn-danger"> <i class="bi bi-trash"></i> Hapus</a>
                         </td>
                     </tr>
                     @endforeach

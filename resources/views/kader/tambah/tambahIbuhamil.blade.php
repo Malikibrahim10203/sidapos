@@ -82,7 +82,7 @@
                         
                             <option value="1">Belum Lahir</option>
                             <option value="2">Lahir</option>
-                            
+                            <option value="3">Gugur</option>
                         
                     </select>
                     <br>

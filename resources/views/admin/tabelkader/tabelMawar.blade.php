@@ -21,11 +21,12 @@
         <li>
             <div class="dropdown">
                 <a class="btn btn-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-hospital"></i>
                     Posyandu Anggrek
                 </a>
 
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="/tabelkaderanggrek">Lihat data Kader</a></li>
+                    <li><a class="dropdown-item" href="/tabelkaderanggrek"> Lihat data Kader</a></li>
                     <li><a class="dropdown-item" href="/tabelbalitaadmin/{{ $parameter = 1 }}">Lihat data Balita</a></li>
                     <li><a class="dropdown-item" href="/tabelibuhamiladmin/{{ $parameter = 1 }}">Lihat data Ibu Hamil</a></li>
                 </ul>
@@ -35,6 +36,7 @@
         <li>
             <div class="dropdown">
                 <a class="btn btn-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-hospital"></i>
                     Posyandu Mawar
                 </a>
 
@@ -81,7 +83,7 @@
         @endif
         <div class="card mt-2">
             <div class="card-body">
-                <a href="" class="btn btn-info">Cetak</a>
+                <a href="" class="btn btn-info"> <i class="bi bi-printer"></i> Cetak</a>
                 <table class="table mt-3 table-bordered">
                     <tr class="judul">
                         <th>Nama Kader</th>
@@ -97,9 +99,9 @@
                         <td>{{$d->jabatan}}</td>
                         <td>{{$d->pos}}</td>
                         <td>
-                            <a href="/ubahkader/{{ $d->id }}" class="btn btn-info">Edit</a>
+                            <a href="/ubahkader/{{ $d->id }}" class="btn btn-info"> <i class="bi bi-pencil-square"></i> Edit</a>
                             |
-                            <a href="/hapuskader/{{ $d->id }}" class="btn btn-danger">Delete</a>
+                            <a href="/hapuskader/{{ $d->id }}" class="btn btn-danger"> <i class="bi bi-trash"></i> Delete</a>
                         </td>
                     </tr>
                     @endforeach

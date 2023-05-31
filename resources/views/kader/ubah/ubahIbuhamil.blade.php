@@ -82,6 +82,7 @@
                         
                             <option value="1" {{ $data->status == 'Belum lahir'? 'selected': '' }}>Belum Lahir</option>
                             <option value="2" {{ $data->status == 'Lahir'? 'selected': '' }}>Lahir</option>
+                            <option value="3" {{ $data->status == 'Gugur'? 'selected': '' }}>Gugur</option>
                             
                         
                     </select>

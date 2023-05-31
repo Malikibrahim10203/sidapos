@@ -77,7 +77,7 @@
                         {{ session('hapus') }}
                     </div>
                 @endif
-                <a href="" class="btn btn-info">Cetak</a>
+                <a href="" class="btn btn-info"> <i class="bi bi-printer"></i> Cetak</a>
                 <table class="table mt-3 table-bordered" border="1">
                     <tr class="judul">
                         <th rowspan="2">Nama Lengkap</th>
@@ -85,7 +85,7 @@
                         <th rowspan="2">Umur</th>
                         <th colspan="5" style="text-align: center;">IMUNISASI</th>
                         <th rowspan="2">Jenis Kelamin</th>
-                        <th rowspan="2" style="text-align: center;" width="15%">Opsi</th>
+                        <th rowspan="2" style="text-align: center;" width="20%">Opsi</th>
                     </tr>
                     <tr class="judul1">
                         <th>BCG</th>
@@ -175,9 +175,9 @@
                         </td>
                         <td>{{ $d->kelamin}}</td>
                         <td>
-                            <a href="ubahbalita/{{ $d->idbalita }}" class="btn btn-info">Ubah</a> 
+                            <a href="ubahbalita/{{ $d->idbalita }}" class="btn btn-info"> <i class="bi bi-pencil-square"></i> Ubah</a> 
                             |
-                            <a href="hapusbalita/{{ $d->idbalita }}" class="btn btn-danger">Hapus</a>
+                            <a href="hapusbalita/{{ $d->idbalita }}" class="btn btn-danger"> <i class="bi bi-trash"></i> Hapus</a>
                         </td>
                     </tr>
                     @endforeach

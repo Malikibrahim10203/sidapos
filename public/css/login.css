@@ -1,5 +1,4 @@
 * {
-    margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;   
@@ -7,13 +6,11 @@
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: 100vh;
     background: #F8F8F8;
 }
 
 .container {
+    margin-top: 8%;
     justify-content: center;
     width: 100%;
     display: flex;
@@ -96,4 +93,8 @@ p a {
 
 .forget {
     font-size: 13px;
+}
+
+.footer {
+    bottom: 0;
 }
