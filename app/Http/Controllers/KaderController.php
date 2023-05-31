@@ -176,4 +176,15 @@ class KaderController extends Controller
         }
         
     }
+    public function hapusibuhamil($id)
+    {
+        if(!Auth::check()) {
+            return redirect('login');
+        } else {
+            DB::table('ibuhamil')->where('idibuhamil', $id)->delete();
+
+            return redirect('tabelibuhamil')->with('hapus', 'Hapus Data Ibu Hamil Berhasil !!');
+        }
+        
+    }
 }

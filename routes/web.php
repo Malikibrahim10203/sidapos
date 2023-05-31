@@ -74,6 +74,7 @@ Route::group(['middleware' => ['auth']], function()
         Route::post('/updateibuhamil/{id}', 'App\Http\Controllers\KaderController@updateibuhamil');
 
         Route::get('/hapusbalita/{id}', 'App\Http\Controllers\KaderController@hapusbalita');
+        Route::get('/hapusibuhamil/{id}', 'App\Http\Controllers\KaderController@hapusibuhamil');
 
         
     });

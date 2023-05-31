@@ -100,7 +100,7 @@
                         <td>
                             <a href="/ubahibuhamil/{{ $d->idibuhamil }}" class="btn btn-info"> <i class="bi bi-pencil-square"></i> Ubah</a> 
                             |
-                            <a href="" class="btn btn-danger"> <i class="bi bi-trash"></i> Hapus</a>
+                                <a href="/hapusibuhamil/{{ $d->idibuhamil }}" class="btn btn-danger"> <i class="bi bi-trash"></i> Hapus</a>
                         </td>
                     </tr>
                     @endforeach
