@@ -124,6 +124,7 @@
                     </tr>
                     @endforeach
                 </table>
+                {{ $tabelibuhamil->links() }}
             </div>
         </div>
     </section>

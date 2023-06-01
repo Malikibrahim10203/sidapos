@@ -106,6 +106,7 @@
                     </tr>
                     @endforeach
                 </table>
+                {{ $kadermawar->links() }}
             </div>
         </div>
     </section>

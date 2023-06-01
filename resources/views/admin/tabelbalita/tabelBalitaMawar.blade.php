@@ -186,6 +186,7 @@
                     </tr>
                     @endforeach
                 </table>
+                {{ $tabelbalita->links() }}
             </div>
         </div>
     </section>

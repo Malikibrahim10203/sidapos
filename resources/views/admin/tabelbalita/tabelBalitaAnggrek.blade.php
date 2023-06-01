@@ -87,7 +87,29 @@
         </div>
         <div class="card mt-2">
             <div class="card-body">
-                <a href="" class="btn btn-info"> <i class="bi bi-printer"></i> Cetak</a>
+                <nav class="navbar">
+                    <div class="container-fluid">
+                        <a href="" class="btn btn-info"> <i class="bi bi-printer"></i> Cetak</a>
+                        <form class="d-flex" role="search" action="/tabelbalitaadmin/{{ $parameter = 1;}}" method="post">
+                            <select name="cari" id="cari" class="form-select">
+                                <option value="01">Januari</option>
+                                <option value="02">Februari</option>
+                                <option value="03">Maret</option>
+                                <option value="04">April</option>
+                                <option value="05">Mei</option>
+                                <option value="06">Juni</option>
+                                <option value="07">Juli</option>
+                                <option value="08">Agustus</option>
+                                <option value="09">September</option>
+                                <option value="10">Oktober</option>
+                                <option value="11">Novenber</option>
+                                <option value="12">Desember</option>
+                            </select>
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form>
+                    </div>
+                </nav>
+
                 <table class="table mt-3 table-bordered">
                     <tr class="judul">
                         <th rowspan="2">Nama Lengkap</th>
@@ -186,6 +208,7 @@
                     </tr>
                     @endforeach
                 </table>
+                {{ $tabelbalita->links() }}
             </div>
         </div>
     </section>

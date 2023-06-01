@@ -107,6 +107,7 @@
                     </tr>
                     @endforeach
                 </table>
+                {{ $kaderanggrek->links() }}
             </div>
         </div>
     </section>
