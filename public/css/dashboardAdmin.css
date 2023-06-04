@@ -1,6 +1,7 @@
 
 body {
     background-color: #F8F8F8;
+    font-family: Arial, Helvetica, sans-serif;   
 }
 
 li {
@@ -77,9 +78,49 @@ a {
 
 .jarak {
     display: flex;
-    margin: 0 5px;
+    margin: 5px;
 }
 
 .icon {
     bottom: 0;
+    color: black;
+}
+
+.jarak h1 {
+    float: right;
+}
+
+img {
+    background-color: #20C997;
+    border-radius: 50%;
+}
+
+.salam {
+    justify-content: center;
+}
+
+.judul-dashboard {
+    color: #394867;
+}
+
+.text-dashboard {
+    margin: auto;
+}
+
+.menu-atas {
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu-kader {
+    border: none;
+    color: grey;
+    box-shadow: 0 5px 10px #9DB2BF;
+}
+
+.menu-posyandu {
+    border: none;
+    background-color: #6B728E;
+    color: #F8F8F8;
+    box-shadow: 0 5px 10px #9DB2BF;
 }

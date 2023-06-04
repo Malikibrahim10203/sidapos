@@ -17,37 +17,17 @@
 
     <div class="sidebar p-4" id="sidebar">
         <h3 class="mb-5 text-black"><a href="/dashboardadmin">Sidapos</a></h3>
-        <h5 class="mt-5">Menu</h5>
+        <div class="menu">
+            <h5 class="mt-5"> <i class="bi bi-list"></i> Menu</h5>
+        </div>
         <li>
-            <div class="dropdown">
-                <a class="btn btn-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="bi bi-hospital"></i>
-                    Posyandu Anggrek
-                </a>
-
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="/tabelkaderanggrek">Lihat data Kader</a></li>
-                    <li><a class="dropdown-item" href="/tabelbalitaadmin/{{ $parameter = 1 }}">Lihat data Balita</a></li>
-                    <li><a class="dropdown-item" href="/tabelibuhamiladmin/{{ $parameter = 1 }}">Lihat data Ibu Hamil</a></li>
-                </ul>
-            </div>
-        </li>
-
-        <li>
-            <div class="dropdown">
-                <a class="btn btn-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Posyandu Mawar
-                </a>
-
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="/tabelkadermawar">Lihat data Kader</a></li>
-                    <li><a class="dropdown-item" href="/tabelbalitaadmin/{{ $parameter = 2 }}">Lihat data Balita</a></li>
-                    <li><a class="dropdown-item" href="/tabelibuhamiladmin/{{ $parameter = 2 }}">Lihat data Ibu Hamil</a></li>
-                </ul>
-            </div>
+            <a href="/dashboardadmin" class="btn btn-light">
+                <i class="bi bi-house"></i>
+                Halaman Utama
+            </a>
         </li>
         <li>
-            <a href="tampiltambahkader" class="btn btn-light">
+            <a href="/tampiltambahkader" class="btn btn-light">
                 <i class="bi bi-person-plus mr-2"></i>
                 Tambah data Kader  
             </a>
@@ -84,7 +64,7 @@
 
         <div class="card mt-2">
             <div class="card-body">
-                <a href="" class="btn btn-info"> <i class="bi bi-printer"></i> Cetak</a>
+                <a href="" class="btn btn-info cetak"> <i class="bi bi-printer"></i> Cetak</a>
                 <table class="table mt-3 table-bordered">
                     <tr class="judul">
                         <th>Nama Kader</th>
@@ -94,7 +74,7 @@
                         <th>Opsi</th>
                     </tr>
                     @foreach( $kaderanggrek as $d) 
-                    <tr>              
+                    <tr class="field">              
                         <td>{{$d->namalengkap}}</td>
                         <td>{{$d->email}}</td>
                         <td>{{$d->jabatan}}</td>

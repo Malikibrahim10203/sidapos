@@ -10,6 +10,5 @@ document.getElementById("button-toggle").addEventListener("click", () => {
 });
 
 $(document).ready(function(){
-  $('.dropdown-toggle').dropdown()
+  $('.dropdown-toggle').dropdown();
 });
-

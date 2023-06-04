@@ -17,7 +17,9 @@
 
     <div class="sidebar p-4" id="sidebar">
         <h3 class="mb-5 text-black"><a href="dashboardadmin">Sidapos</a></h3>
-        <h5 class="mt-5">Menu</h5>
+        <div class="menu">
+            <h5 class="mt-5"> <i class="bi bi-list"></i> Menu</h5>
+        </div>
         <li>
             <div class="dropdown">
                 <a class="btn btn-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -77,9 +79,10 @@
                         {{ session('hapus') }}
                     </div>
                 @endif
-                <a href="" class="btn btn-info"> <i class="bi bi-printer"></i> Cetak</a>
-                <table class="table mt-3 table-bordered" border="1">
+                <a href="" class="btn btn-info cetak"> <i class="bi bi-printer"></i> Cetak</a>
+                <table class="table mt-3 table-bordered">
                     <tr class="judul">
+                        <th rowspan="2">NO.</th>
                         <th rowspan="2">Nama Lengkap</th>
                         <th rowspan="2" width="20px">Alamat</th>
                         <th rowspan="2">Umur</th>
@@ -94,9 +97,10 @@
                         <th>Hepatitis B</th>
                         <th>Polio</th>
                     </tr>
-                    
+                    <?php $no = 0;?>
                     @foreach($tabelbalita as $d)
-                    <tr>
+                    <tr class="field">
+                        <td><?php echo $no.".";?></td>
                         <td>{{ $d->namalengkap }}</td>
                         <td>{{ $d->alamat }}</td>
                         
@@ -180,6 +184,7 @@
                             <a href="hapusbalita/{{ $d->idbalita }}" class="btn btn-danger"> <i class="bi bi-trash"></i> Hapus</a>
                         </td>
                     </tr>
+                    <?php $no++?>
                     @endforeach
                 </table>
                 {{ $tabelbalita->links() }}

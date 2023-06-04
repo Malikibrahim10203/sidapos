@@ -140,7 +140,6 @@ class AdminController extends Controller
         if($parameter == 1){
 
             $bulan = $request->cari;
-
             $nama = 1;
             $tabelbalita = DB::table('balita')
                 ->leftJoin('jeniskelamin', 'balita.id_jk', '=', 'jeniskelamin.id_jk')->where('idposyandu', '=', 1)->simplePaginate(5);                                                                                

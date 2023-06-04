@@ -17,38 +17,17 @@
 
     <div class="sidebar p-4" id="sidebar">
         <h3 class="mb-5 text-black"><a href="/dashboardadmin">Sidapos</a></h3>
-        <h5 class="mt-5">Menu</h5>
+        <div class="menu">
+            <h5 class="mt-5"> <i class="bi bi-list"></i> Menu</h5>
+        </div>
         <li>
-            <div class="dropdown">
-                <a class="btn btn-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="bi bi-hospital"></i>
-                    Posyandu Anggrek
-                </a>
-
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="/tabelkaderanggrek">Lihat data Kader</a></li>
-                    <li><a class="dropdown-item" href="/tabelbalitaadmin/{{ $parameter = 1 }}">Lihat data Balita</a></li>
-                    <li><a class="dropdown-item" href="/tabelibuhamiladmin/{{ $parameter = 1 }}">Lihat data Ibu Hamil</a></li>
-                </ul>
-            </div>
-        </li>
-
-        <li>
-            <div class="dropdown">
-                <a class="btn btn-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="bi bi-hospital"></i>
-                    Posyandu Mawar
-                </a>
-
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="/tabelkadermawar">Lihat data Kader</a></li>
-                    <li><a class="dropdown-item" href="/tabelbalitaadmin/{{ $parameter = 2 }}">Lihat data Balita</a></li>
-                    <li><a class="dropdown-item" href="/tabelibuhamiladmin/{{ $parameter = 2 }}">Lihat data Ibu Hamil</a></li>
-                </ul>
-            </div>
+            <a href="/dashboardadmin" class="btn btn-light">
+                <i class="bi bi-house"></i>
+                Halaman Utama
+            </a>
         </li>
         <li>
-            <a href="tampiltambahkader" class="btn btn-light">
+            <a href="/tampiltambahkader" class="btn btn-light">
                 <i class="bi bi-person-plus mr-2"></i>
                 Tambah data Kader  
             </a>
@@ -87,7 +66,7 @@
         </div>
         <div class="card mt-2">
             <div class="card-body">
-                <a href="" class="btn btn-info"> <i class="bi bi-printer"></i> Cetak</a>
+                <a href="/exportbalita/{{ $nama }}" class="btn btn-info cetak"> <i class="bi bi-printer"></i> Cetak</a>
                 <table class="table mt-3 table-bordered">
                     <tr class="judul">
                         <th rowspan="2">Nama Lengkap</th>
@@ -105,7 +84,7 @@
                     </tr>
                     
                     @foreach($tabelbalita as $d)
-                    <tr>
+                    <tr class="field">
                         <td>{{ $d->namalengkap }}</td>
                         <td>{{ $d->alamat }}</td>
                         
@@ -126,13 +105,25 @@
                             $hr = $sekarang->diff($tanggallahir)->d;
                         ?>
                         
-                        <td><?php echo $thn." tahun ".$bln." bulan ".$hr." hari"; ?></td>
+                        <td>
+                            <?php 
+
+                                if($thn == 0 && $bln != 0 && $hr != 0) {
+                                    echo $bln." bulan ".$hr." hari";
+                                } else if ($thn == 0 && $bln == 0) {
+                                    echo $hr." hari";
+                                } else {
+                                    echo $thn." tahun ".$bln." bulan ".$hr." hari";
+                                }
+                            
+                            ?>
+                        </td>
                         <td>
                             <?php
                             
                                 if($d->imunisasi_bcg == 'sudah')
                                 {
-                                    echo "<span class='badge text-bg-success'>Success</span>";
+                                    echo "<span class='badge text-bg-success'>sudah</span>";
                                 } else if($d->imunisasi_bcg == 'belum') {
                                     echo "<span class='badge text-bg-warning'>belum</span>";
                                 }
@@ -143,7 +134,7 @@
                                 
                                 if($d->imunisasi_campak == 'sudah')
                                 {
-                                    echo "<span class='badge text-bg-success'>Success</span>";
+                                    echo "<span class='badge text-bg-success'>sudah</span>";
                                 } else if($d->imunisasi_campak == 'belum') {
                                     echo "<span class='badge text-bg-warning'>belum</span>";
                                 }
@@ -154,7 +145,7 @@
                                 
                                 if($d->imunisasi_dpt_hb_hib == 'sudah')
                                 {
-                                    echo "<span class='badge text-bg-success'>Success</span>";
+                                    echo "<span class='badge text-bg-success'>sudah</span>";
                                 } else if($d->imunisasi_dpt_hb_hib == 'belum') {
                                     echo "<span class='badge text-bg-warning'>belum</span>";
                                 }
@@ -165,7 +156,7 @@
                                 
                                 if($d->imunisasi_hepatitis_b == 'sudah')
                                 {
-                                    echo "<span class='badge text-bg-success'>Success</span>";
+                                    echo "<span class='badge text-bg-success'>sudah</span>";
                                 } else if($d->imunisasi_hepatitis_b == 'belum') {
                                     echo "<span class='badge text-bg-warning'>belum</span>";
                                 }
@@ -176,7 +167,7 @@
                                 
                                 if($d->imunisasi_polio == 'sudah')
                                 {
-                                    echo "<span class='badge text-bg-success'>Success</span>";
+                                    echo "<span class='badge text-bg-success'>sudah</span>";
                                 } else if($d->imunisasi_polio == 'belum') {
                                     echo "<span class='badge text-bg-warning'>belum</span>";
                                 }

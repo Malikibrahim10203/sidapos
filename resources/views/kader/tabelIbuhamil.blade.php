@@ -17,7 +17,9 @@
 
     <div class="sidebar p-4" id="sidebar">
         <h3 class="mb-5 text-black"><a href="dashboardadmin">Sidapos</a></h3>
-        <h5 class="mt-5">Menu</h5>
+        <div class="menu">
+            <h5 class="mt-5"> <i class="bi bi-list"></i> Menu</h5>
+        </div>
         <li>
             <div class="dropdown">
                 <a class="btn btn-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -64,7 +66,7 @@
     <section class="p-4" id="main-content">
         <div class="card mt-5">
             <div class="card-body">
-                <a href="" class="btn btn-info"> <i class="bi bi-printer"></i> Cetak</a>
+                <a href="" class="btn btn-info cetak"> <i class="bi bi-printer"></i> Cetak</a>
                 <table class="table mt-3 table-bordered" border="1">
                     <tr class="judul">
                         <th>Nama Lengkap</th>
@@ -75,7 +77,7 @@
                     </tr>
 
                     @foreach($tabelibuhamil as $d)
-                    <tr>
+                    <tr class="field">
                         <td>{{ $d->namalengkap }}</td>
                         <td>{{ $d->alamat }}</td>
                         <?php 

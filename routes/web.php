@@ -45,6 +45,10 @@ Route::group(['middleware' => ['auth']], function()
         Route::get('/tabelbalitaadmin/{parameter}', 'App\Http\Controllers\AdminController@tabelbalita')->name('admin');
         Route::get('/tabelibuhamiladmin/{parameter}', 'App\Http\Controllers\AdminController@tabelibuhamil')->name('admin');
 
+        Route::get('/laporanbalita/{name}', 'App\Http\Controllers\LaporanController@tabelbalita')->name('admin');
+
+        Route::get('/exportbalita/{name}', 'App\Http\Controllers\LaporanController@export');
+
 
 
 

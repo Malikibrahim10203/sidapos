@@ -18,8 +18,9 @@
 <body>
     <div class="sidebar p-4" id="sidebar">
         <h3 class="mb-5 text-black">Sidapos</h3>
-        <h5 class="mt-5">Menu</h5>
-
+        <div class="menu">
+            <h5 class="mt-5"> <i class="bi bi-list"></i> Menu</h5>
+        </div>
         <li>
             <div class="dropdown">
                 <a class="btn btn-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

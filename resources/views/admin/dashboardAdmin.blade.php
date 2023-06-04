@@ -17,37 +17,9 @@
 <body>
     <div class="sidebar p-4" id="sidebar">
         <h3 class="mb-5 text-black"><a href="/dashboardadmin">Sidapos</a></h3>
-        <h5 class="mt-5">Menu</h5>
-
-        <li>
-            <div class="dropdown">
-                <a class="btn btn-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="bi bi-hospital"></i>
-                    Posyandu Anggrek
-                </a>
-
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="/tabelkaderanggrek"> <i class="bi bi-eye"></i> Lihat data Kader</a></li>
-                    <li><a class="dropdown-item" href="/tabelbalitaadmin/{{ $parameter = 1 }}"> <i class="bi bi-eye"></i> Lihat data Balita</a></li>
-                    <li><a class="dropdown-item" href="/tabelibuhamiladmin/{{ $parameter = 1 }}"> <i class="bi bi-eye"></i> Lihat data Ibu Hamil</a></li>
-                </ul>
-            </div>
-        </li>
-
-        <li>
-            <div class="dropdown">
-                <a class="btn btn-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="bi bi-hospital"></i>
-                    Posyandu Mawar
-                </a>
-
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="/tabelkadermawar"> <i class="bi bi-eye"></i> Lihat data Kader</a></li>
-                    <li><a class="dropdown-item" href="/tabelbalitaadmin/{{ $parameter = 2 }}"> <i class="bi bi-eye"></i> Lihat data Balita</a></li>
-                    <li><a class="dropdown-item" href="/tabelibuhamiladmin/{{ $parameter = 2 }}"> <i class="bi bi-eye"></i> Lihat data Ibu Hamil</a></li>
-                </ul>
-            </div>
-        </li>
+        <div class="menu">
+            <h5 class="mt-5"> <i class="bi bi-list"></i> Menu</h5>
+        </div>
         <li>
             <a href="tampiltambahkader" class="btn btn-light">
                 <i class="bi bi-person-plus mr-2"></i>
@@ -72,40 +44,90 @@
     </section>
 
     <section class="p-4" id="main-content">
-        <div class="container">
-            <div class="card mt-5">
+
+        <div class="container mt-2 salam">
+            <div class="card">
                 <div class="card-body">
-                    <p>
-                        <h2>Wellcome, </strong> {{ $data }} </h2>
-                    </p>    
+                    <div class="judul-atas">
+                        <div class="judul-dashboard">
+                            <h2><strong>SELAMAT DATANG</strong>, {{ $data }}</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="menu-atas">
+
+                <div class="card mt-3">
+                    <div class="card-body status">
+                        <div class="card item menu-kader" style="width: 18rem;">
+                            <div class="card-body jarak">
+                                <div class="icon">
+                                    <h5 class="card-title">Kader Posyandu Anggrek</h5>
+                                    <img src="{{ asset('img/member.png') }}" class="mt-3 icon">
+                                    <h1 class="mt-3">{{ $kaderanggrek }}</h1>
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+
+                        <div class="card item menu-kader" style="width: 18rem;">
+                            <div class="card-body jarak">
+                                <div class="icon">
+                                    <h5 class="card-title">Kader Posyandu Mawar</h5>
+                                    <img src="{{ asset('img/member.png') }}" class="mt-3 icon">
+                                    <h1 class="mt-3"> {{ $kadermawar }}</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="card mt-2">
+            <div class="card mt-3">
                 <div class="card-body status">
-                    <div class="card mt-2 item" style="width: 18rem;">
+                    <div class="card item menu-posyandu" style="width: 18rem;">
                         <div class="card-body jarak">
-                            <div class="container">
-                                <h5 class="card-title"><span class="badge text-bg-info">Kader Posyandu Anggrek</span></h5>
-                                <img src="{{ asset('img/member.png') }}" class="mt-3 icon">
-                            </div>
-                            <div class="jumlah">
-                                <h1>{{ $kaderanggrek }}</h1>
+                            <div class="box-posyandu">
+                                <h5 class="card-title">Kader Posyandu Anggrek</h5>
+                                <div class="dropdown">
+                                    <a class="btn btn-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="bi bi-hospital"></i>
+                                        Posyandu Anggrek
+                                    </a>
+
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="/tabelkaderanggrek"> <i class="bi bi-eye"></i> Lihat data Kader</a></li>
+                                        <li><a class="dropdown-item" href="/tabelbalitaadmin/{{ $parameter = 1 }}"> <i class="bi bi-eye"></i> Lihat data Balita</a></li>
+                                        <li><a class="dropdown-item" href="/tabelibuhamiladmin/{{ $parameter = 1 }}"> <i class="bi bi-eye"></i> Lihat data Ibu Hamil</a></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="card mt-2 item" style="width: 18rem;">
+                    <div class="card item menu-posyandu" style="width: 18rem;">
                         <div class="card-body jarak">
-                            <div class="container">
-                                <h5 class="card-title"><span class="badge text-bg-info">Kader Posyandu Mawar</span></h5>
-                                <img src="{{ asset('img/member.png') }}" class="mt-3 icon">
-                            </div>
-                            <div class="jumlah">
-                                <h1>{{ $kadermawar }}</h1>
+                            <div class="box-posyandu">
+                                <h5 class="card-title">Kader Posyandu Mawar</h5>
+                                <div class="dropdown">
+                                    <a class="btn btn-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="bi bi-hospital"></i>
+                                        Posyandu Mawar
+                                    </a>
+
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="/tabelkadermawar"> <i class="bi bi-eye"></i> Lihat data Kader</a></li>
+                                        <li><a class="dropdown-item" href="/tabelbalitaadmin/{{ $parameter = 2 }}"> <i class="bi bi-eye"></i> Lihat data Balita</a></li>
+                                        <li><a class="dropdown-item" href="/tabelibuhamiladmin/{{ $parameter = 2 }}"> <i class="bi bi-eye"></i> Lihat data Ibu Hamil</a></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>

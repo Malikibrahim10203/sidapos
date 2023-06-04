@@ -49,15 +49,43 @@ a {
     transition: 0.4s;
 }
 
-.table {
+table {
     border-radius: 10px;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+
+table th, table td {
+    padding: 12px 15px;
+}
+
+table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+table tbody .field:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
 }
 
 .judul {
     border-radius: 3px;
     font-size: 13px;
     color: white;
-    background-color: #00B0FF;
+    background-color: #6B728E;
 }
 
 .judul th {
@@ -69,5 +97,9 @@ a {
     border-radius: 3px;
     font-size: 15x;
     color: white;
-    background-color: #00B0FF;
+    background-color: #6B728E;
+}
+
+.cetak {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
