@@ -21,7 +21,6 @@ a {
     transition: 0.4s;
     background-color: white;
     box-shadow: 0px 10px 15px grey;
-    border-radius: 15px;
 }
 
 .sidebar a {
@@ -78,7 +77,7 @@ table tbody .field:nth-of-type(even) {
 }
 
 table tbody tr:last-of-type {
-    border-bottom: 2px solid #009879;
+    border-bottom: 4px solid #009879;
 }
 
 .judul {
@@ -102,4 +101,12 @@ table tbody tr:last-of-type {
 
 .cetak {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.menu-filter {
+    display: flex;
+}
+
+#filterbulan {
+    width: 100px;
 }

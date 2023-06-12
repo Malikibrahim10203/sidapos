@@ -63,6 +63,7 @@ class AdminController extends Controller
 
     public function tabelanggrek()
     {
+            
         $kaderanggrek = DB::table('users')
             ->leftJoin('posyandu', 'users.idposyandu', '=', 'posyandu.idposyandu')->where('jabatan', '=', 'kader')->where('users.idposyandu', '=', '1')
             ->simplePaginate(5);
@@ -71,6 +72,7 @@ class AdminController extends Controller
 
     public function tabelmawar()
     {
+        
         $kadermawar = DB::table('users')
             ->leftJoin('posyandu', 'users.idposyandu', '=', 'posyandu.idposyandu')->where('jabatan', '=', 'kader')->where('users.idposyandu', '=', '2')
             ->simplePaginate(5);

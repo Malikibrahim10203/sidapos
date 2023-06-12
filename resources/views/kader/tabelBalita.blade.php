@@ -79,7 +79,85 @@
                         {{ session('hapus') }}
                     </div>
                 @endif
-                <a href="" class="btn btn-info cetak"> <i class="bi bi-printer"></i> Cetak</a>
+                <?php 
+
+                    $nama = $data;
+                    $date = date('m');
+                    $bulan = $date;
+                ?>
+
+                <?php 
+                    // $temp = $_COOKIE['kirim'];
+
+                    if(isset($_GET['bulan'])) {
+                        $bulan = $_GET['bulan'];
+                    } else {
+                        $bulan = 01;
+                    }
+                ?>
+
+                <div class="menu-filter">
+                    <select id="filterbulan" class="form-select d-flex me-2">
+                        <option value="01" {{ $bulan == '01'? 'selected': '' }}>
+                            
+                            Januari
+                        </option>
+                        <option value="02" {{ $bulan == '02'? 'selected': '' }}>
+                            
+                            Februari
+                        </option>
+                        <option value="03" {{ $bulan == '03'? 'selected': '' }}>
+                            
+                            Maret
+                        </option>
+                        <option value="04" {{ $bulan == '04'? 'selected': '' }}>
+                            
+                            April
+                        </option>
+                        <option value="05" {{ $bulan == '05'? 'selected': '' }}>
+                            
+                            Mei
+                        </option>
+                        <option value="06" {{ $bulan == '06'? 'selected': '' }}>
+                            
+                            Juni
+                        </option>
+                        <option value="07" {{ $bulan == '07'? 'selected': '' }}>
+                            
+                            Juli
+                        </option>
+                        <option value="08" {{ $bulan == '08'? 'selected': '' }}>
+                            
+                            Agustus
+                        </option>
+                        <option value="09" {{ $bulan == '09'? 'selected': '' }}>
+                            
+                            September
+                        </option>
+                        <option value="10" {{ $bulan == '10'? 'selected': '' }}>
+                            
+                            Oktober
+                        </option>
+                        <option value="11" {{ $bulan == '11'? 'selected': '' }}>
+                            
+                            November
+                        </option>
+                        <option value="12" {{ $bulan == '12'? 'selected': '' }}>
+                            
+                            Desember
+                        </option>
+                    </select>
+                    <a href="/exportbalita/{{ $nama }}/{{ $bulan }}" id="kirim" class="btn btn-info cetak"> <i class="bi bi-printer"></i> Cetak</a>
+                </div>
+
+                <script>
+                    
+                    document.getElementById('filterbulan').addEventListener('change', function() {
+                        var isi = this.value;
+                        location.replace(window.location.href.split('?')[0]+'?bulan='+isi);
+                    });
+                </script>
+            
                 <table class="table mt-3 table-bordered">
                     <tr class="judul">
                         <th rowspan="2">NO.</th>
@@ -97,7 +175,7 @@
                         <th>Hepatitis B</th>
                         <th>Polio</th>
                     </tr>
-                    <?php $no = 0;?>
+                    <?php $no = 1;?>
                     @foreach($tabelbalita as $d)
                     <tr class="field">
                         <td><?php echo $no.".";?></td>
@@ -121,13 +199,26 @@
                             $hr = $sekarang->diff($tanggallahir)->d;
                         ?>
                         
-                        <td><?php echo $thn." tahun ".$bln." bulan ".$hr." hari"; ?></td>
+                        <td>
+                            <?php 
+
+                                if($thn == 0 && $bln != 0 && $hr != 0) {
+                                    echo $bln." bulan ".$hr." hari";
+                                } else if ($thn == 0 && $bln == 0) {
+                                    echo $hr." hari";
+                                } else {
+                                    echo $thn." tahun ".$bln." bulan ".$hr." hari";
+                                }
+                            
+                            ?>
+                        </td>
+
                         <td>
                             <?php
                             
                                 if($d->imunisasi_bcg == 'sudah')
                                 {
-                                    echo "<span class='badge text-bg-success'>Success</span>";
+                                    echo "<span class='badge text-bg-success'>sudah</span>";
                                 } else if($d->imunisasi_bcg == 'belum') {
                                     echo "<span class='badge text-bg-warning'>belum</span>";
                                 }
@@ -138,7 +229,7 @@
                                 
                                 if($d->imunisasi_campak == 'sudah')
                                 {
-                                    echo "<span class='badge text-bg-success'>Success</span>";
+                                    echo "<span class='badge text-bg-success'>sudah</span>";
                                 } else if($d->imunisasi_campak == 'belum') {
                                     echo "<span class='badge text-bg-warning'>belum</span>";
                                 }
@@ -149,7 +240,7 @@
                                 
                                 if($d->imunisasi_dpt_hb_hib == 'sudah')
                                 {
-                                    echo "<span class='badge text-bg-success'>Success</span>";
+                                    echo "<span class='badge text-bg-success'>sudah</span>";
                                 } else if($d->imunisasi_dpt_hb_hib == 'belum') {
                                     echo "<span class='badge text-bg-warning'>belum</span>";
                                 }
@@ -160,7 +251,7 @@
                                 
                                 if($d->imunisasi_hepatitis_b == 'sudah')
                                 {
-                                    echo "<span class='badge text-bg-success'>Success</span>";
+                                    echo "<span class='badge text-bg-success'>sudah</span>";
                                 } else if($d->imunisasi_hepatitis_b == 'belum') {
                                     echo "<span class='badge text-bg-warning'>belum</span>";
                                 }
@@ -171,7 +262,7 @@
                                 
                                 if($d->imunisasi_polio == 'sudah')
                                 {
-                                    echo "<span class='badge text-bg-success'>Success</span>";
+                                    echo "<span class='badge text-bg-success'>sudah</span>";
                                 } else if($d->imunisasi_polio == 'belum') {
                                     echo "<span class='badge text-bg-warning'>belum</span>";
                                 }

@@ -12,3 +12,7 @@ document.getElementById("button-toggle").addEventListener("click", () => {
 $(document).ready(function(){
   $('.dropdown-toggle').dropdown();
 });
+
+document.getElementById('filterbulan').addEventListener('change', function() {
+  let bulan = this.value();
+});

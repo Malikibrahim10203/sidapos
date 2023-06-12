@@ -9,6 +9,7 @@ use App\Models\User;
 use App\Models\Balita;
 use App\Models\Ibuhamil;
 
+
 class KaderController extends Controller
 {
     //
@@ -50,9 +51,8 @@ class KaderController extends Controller
             $data = $user->idposyandu;
 
             $tabelbalita = DB::table('balita')
-                    ->leftJoin('jeniskelamin', 'balita.id_jk', '=', 'jeniskelamin.id_jk')->where('idposyandu', '=', $data)
-                    ->get();
-            return view('kader/tabelBalita', ['tabelbalita'=>$tabelbalita]);
+                    ->leftJoin('jeniskelamin', 'balita.id_jk', '=', 'jeniskelamin.id_jk')->where('idposyandu', '=', $data)->simplePaginate(5);
+            return view('kader/tabelBalita', ['tabelbalita'=>$tabelbalita, 'data'=>$data]);
         }
     }
 
@@ -63,11 +63,24 @@ class KaderController extends Controller
         } else {
             $user = Auth::user();
             $data = $user->idposyandu;
-    
-            $tabelibuhamil = DB::table('ibuhamil')
+
+            if($data == 1){
+
+                $nama = 1;
+                $tabelibuhamil = DB::table('ibuhamil')
                     ->leftJoin('status', 'ibuhamil.id_status', '=', 'status.id_status')->where('idposyandu', '=', $data)
-                    ->get();
-            return view('kader/tabelIbuhamil', ['tabelibuhamil'=>$tabelibuhamil]);
+                    ->simplePaginate(5);
+                return view('kader/tabelIbuhamil', ['tabelibuhamil'=>$tabelibuhamil, 'data'=>$data]);
+
+            } else if($data == 2) {
+                
+                $nama = 2;
+                $tabelibuhamil = DB::table('ibuhamil')
+                    ->leftJoin('status', 'ibuhamil.id_status', '=', 'status.id_status')->where('idposyandu', '=', $data)
+                    ->simplePaginate(5);
+                return view('kader/tabelIbuhamil', ['tabelibuhamil'=>$tabelibuhamil, 'data'=>$data]);
+
+            }
         }
     }
 
@@ -148,7 +161,7 @@ class KaderController extends Controller
                 ->leftJoin('status', 'ibuhamil.id_status', '=', 'status.id_status')->where('idibuhamil', $id)
                 ->first();
 
-            return view('kader/ubah/ubahibuhamil', ['data'=>$data]);
+            return view('kader/ubah/ubahibuhamil', ['data'=>$data])->with('');
         }
 
     }
@@ -162,7 +175,7 @@ class KaderController extends Controller
             'id_status'   => $request->status
         ]);
 
-        return redirect('/tabelibuhamil')->with('ubah', 'Ubah Data Balita Berhasil !!');
+        return redirect('/tabelibuhamil')->with('ubah', 'Ubah Data Ibu Hamil Berhasil !!');
     }
 
     public function hapusbalita($id)

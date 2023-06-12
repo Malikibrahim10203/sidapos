@@ -45,10 +45,7 @@ Route::group(['middleware' => ['auth']], function()
         Route::get('/tabelbalitaadmin/{parameter}', 'App\Http\Controllers\AdminController@tabelbalita')->name('admin');
         Route::get('/tabelibuhamiladmin/{parameter}', 'App\Http\Controllers\AdminController@tabelibuhamil')->name('admin');
 
-        Route::get('/laporanbalita/{name}', 'App\Http\Controllers\LaporanController@tabelbalita')->name('admin');
-
-        Route::get('/exportbalita/{name}', 'App\Http\Controllers\LaporanController@export');
-
+        
 
 
 
@@ -92,3 +89,8 @@ route::get('/bahan', function() {
 
 Route::post('/simpan', 'App\Http\Controllers\AdminController@simpan');
 
+Route::get('/laporanbalita/{name}/{bulan}', 'App\Http\Controllers\LaporanController@tabelbalita');
+Route::get('/exportbalita/{name}/{bulan}', 'App\Http\Controllers\LaporanController@exportbalita');
+
+Route::get('/laporanibuhamil/{name}/{bulan}', 'App\Http\Controllers\LaporanController@tabelibuhamil');
+Route::get('/exportibuhamil/{name}/{bulan}', 'App\Http\Controllers\LaporanController@exportibuhamil');

@@ -36,36 +36,29 @@
 </head>
 <body>
     
+    
     @foreach($pos as $p)
-        <h2>Laporan Bulanan</h2>
-        <h3>Data Balita Posyandu {{ $p->pos }} Wilayah Desa Ilir</h3>
+    <h2>Laporan Bulanan</h2>
+    <h3>Data Ibu Hamil Posyandu {{ $p->pos }} Wilayah Desa Ilir</h3>
     @endforeach
+    
     <table align="center" class="mt-3">
         <tr class="judul">
-            <th rowspan="2">No</th>
-            <th rowspan="2">Nama Lengkap</th>
-            <th rowspan="2">Alamat</th>
-            <th rowspan="2">Umur</th>
-            <th colspan="5" style="text-align: center;">IMUNISASI</th>
-            <th rowspan="2">Jenis Kelamin</th>
-        </tr>
-        <tr class="judul">
-            <th>BCG</th>
-            <th>Campak</th>
-            <th>DPT HB HIB</th>
-            <th>Hepatitis B</th>
-            <th>Polio</th>
+            <th>No</th>
+            <th>Nama Lengkap</th>
+            <th>Alamat</th>
+            <th>Umur Kehamilan</th>
+            <th>Status</th>
         </tr>
         <?php $no = 1;?>
-        @foreach($tabelbalita as $d)
+        @foreach($tabelibuhamil as $d)
         <tr class="field">
-            <td><?php echo $no;?></td>
+            <td><?php echo $no; ?>.</td>
             <td>{{ $d->namalengkap }}</td>
             <td>{{ $d->alamat }}</td>
-            
             <?php 
             
-                $tanggallahir = new DateTime( $d->tanggal_lahir );
+                $tanggallahir = new DateTime( $d->hpht );
                 $sekarang     = new DateTime("today");
 
                 if($tanggallahir > $sekarang)
@@ -93,64 +86,9 @@
                 
                 ?>
             </td>
-            <td>
-                <?php
-                
-                    if($d->imunisasi_bcg == 'sudah')
-                    {
-                        echo "Sudah";
-                    } else if($d->imunisasi_bcg == 'belum') {
-                        echo "Belum";
-                    }
-                ?>
-            </td>
-            <td>
-                <?php
-                    
-                    if($d->imunisasi_campak == 'sudah')
-                    {
-                        echo "Sudah";
-                    } else if($d->imunisasi_campak == 'belum') {
-                        echo "Belum";
-                    }
-                ?>
-            </td>
-            <td>
-                <?php
-                    
-                    if($d->imunisasi_dpt_hb_hib == 'sudah')
-                    {
-                        echo "Sudah";
-                    } else if($d->imunisasi_dpt_hb_hib == 'belum') {
-                        echo "Belum";
-                    }
-                ?>
-            </td>
-            <td>
-                <?php
-                    
-                    if($d->imunisasi_hepatitis_b == 'sudah')
-                    {
-                        echo "Sudah";
-                    } else if($d->imunisasi_hepatitis_b == 'belum') {
-                        echo "Belum";
-                    }
-                ?>
-            </td>
-            <td>
-                <?php
-                    
-                    if($d->imunisasi_polio == 'sudah')
-                    {
-                        echo "Sudah";
-                    } else if($d->imunisasi_polio == 'belum') {
-                        echo "Belum";
-                    }
-                ?>
-            </td>
-            <td>{{ $d->kelamin }}</td>
+            <td>{{ $d->status}}</td>
+            <?php $no++;?>
         </tr>
-        <?php $no++;?>
         @endforeach
     </table>
     
