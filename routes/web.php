@@ -94,3 +94,9 @@ Route::get('/exportbalita/{name}/{bulan}', 'App\Http\Controllers\LaporanControll
 
 Route::get('/laporanibuhamil/{name}/{bulan}', 'App\Http\Controllers\LaporanController@tabelibuhamil');
 Route::get('/exportibuhamil/{name}/{bulan}', 'App\Http\Controllers\LaporanController@exportibuhamil');
+
+Route::get('/laporanbalita/{name}/{bulan}', 'App\Http\Controllers\LaporanController@tabelbalita');
+Route::get('/exportbalita/{name}/{bulan}', 'App\Http\Controllers\LaporanController@exportbalita');
+
+Route::get('/laporankader/{name}/{bulan}', 'App\Http\Controllers\LaporanController@tabelkader');
+Route::get('/exportkader/{name}/{bulan}', 'App\Http\Controllers\LaporanController@exportkader');

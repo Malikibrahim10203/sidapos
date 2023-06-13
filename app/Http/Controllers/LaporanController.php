@@ -95,4 +95,40 @@ class LaporanController extends Controller
         //mendownload laporan.pdf
     	return $data->download('laporan_sidapos.pdf');
     }
+
+    public function tabelkader($name, $bulan)
+    {
+        
+        if($name == 1){
+            $tabelkader = DB::table('users')
+            ->leftJoin('posyandu', 'users.idposyandu', '=', 'posyandu.idposyandu')->where('jabatan', '=', 'kader')->where('users.idposyandu', '=', '1')->where(DB::raw("(DATE_FORMAT(created_at, '%m'))"), $bulan)
+            ->get();
+        }else if($name == 2){
+            $tabelkader = DB::table('users')
+            ->leftJoin('posyandu', 'users.idposyandu', '=', 'posyandu.idposyandu')->where('jabatan', '=', 'kader')->where('users.idposyandu', '=', '2')->where(DB::raw("(DATE_FORMAT(created_at, '%m'))"), $bulan)
+            ->get();
+        }
+        
+
+        return view('laporan_kader', ['tabelkader'=>$tabelkader]);
+    }
+
+    public function exportkader($name, $bulan){
+        //mengambil data dan tampilan dari halaman laporan_pdf
+        //data di bawah ini bisa kalian ganti nantinya dengan data dari database
+
+        if($name == 1){
+            $tabelkader = DB::table('users')
+            ->leftJoin('posyandu', 'users.idposyandu', '=', 'posyandu.idposyandu')->where('jabatan', '=', 'kader')->where('users.idposyandu', '=', '1')->where(DB::raw("(DATE_FORMAT(created_at, '%m'))"), $bulan)
+            ->get();
+        }else if($name == 2){
+            $tabelkader = DB::table('users')
+            ->leftJoin('posyandu', 'users.idposyandu', '=', 'posyandu.idposyandu')->where('jabatan', '=', 'kader')->where('users.idposyandu', '=', '2')->where(DB::raw("(DATE_FORMAT(created_at, '%m'))"), $bulan)
+            ->get();
+        }
+
+        $data = PDF::loadview('/laporan_kader', ['tabelkader'=>$tabelkader, 'bulan'=>$bulan]);
+        //mendownload laporan.pdf
+    	return $data->download('laporan_sidapos.pdf');
+    }
 }

@@ -135,7 +135,7 @@
                             Desember
                         </option>
                     </select>
-                    <a href="/exportbalita/{{ $nama }}/{{ $bulan }}" id="kirim" class="btn btn-info cetak"> <i class="bi bi-printer"></i> Cetak</a>
+                    <a href="/exportbalita/2/{{ $bulan }}" id="kirim" class="btn btn-info cetak"> <i class="bi bi-printer"></i> Cetak</a>
                 </div>
 
                 <script>
