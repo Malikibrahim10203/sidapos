@@ -99,7 +99,7 @@
                                     </a>
 
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="/tabelkaderanggrek"> <i class="bi bi-eye"></i> Lihat data Kader</a></li>
+                                        <li><a class="dropdown-item" href="/tabelkaderadmin/{{ $parameter = 1}}"> <i class="bi bi-eye"></i> Lihat data Kader</a></li>
                                         <li><a class="dropdown-item" href="/tabelbalitaadmin/{{ $parameter = 1 }}"> <i class="bi bi-eye"></i> Lihat data Balita</a></li>
                                         <li><a class="dropdown-item" href="/tabelibuhamiladmin/{{ $parameter = 1 }}"> <i class="bi bi-eye"></i> Lihat data Ibu Hamil</a></li>
                                     </ul>
@@ -119,7 +119,7 @@
                                     </a>
 
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="/tabelkadermawar"> <i class="bi bi-eye"></i> Lihat data Kader</a></li>
+                                        <li><a class="dropdown-item" href="/tabelkaderadmin/{{ $parameter = 2}}"> <i class="bi bi-eye"></i> Lihat data Kader</a></li>
                                         <li><a class="dropdown-item" href="/tabelbalitaadmin/{{ $parameter = 2 }}"> <i class="bi bi-eye"></i> Lihat data Balita</a></li>
                                         <li><a class="dropdown-item" href="/tabelibuhamiladmin/{{ $parameter = 2 }}"> <i class="bi bi-eye"></i> Lihat data Ibu Hamil</a></li>
                                     </ul>

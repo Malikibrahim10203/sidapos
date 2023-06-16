@@ -65,6 +65,16 @@
         <div class="card mt-2">
             <div class="card-body">
                 <?php 
+                
+                    if ($nama == 1) {
+                        echo "<h2 style='color: #27374D;'>Posyandu Anggrek</h2>";
+                    } else if($nama == 2) {
+                        echo "<h2 style='color: #27374D;'>Posyandu Mawar</h2>";
+                    }
+                ?>
+
+
+                <?php 
 
                     $date = date('m');
                     $bulan = $date;
@@ -149,7 +159,7 @@
                         <th>Posyandu</th>
                         <th width="20%">Opsi</th>
                     </tr>
-                    @foreach( $kaderanggrek as $d) 
+                    @foreach( $kader as $d) 
                     <tr class="field">              
                         <td>{{$d->namalengkap}}</td>
                         <td>{{$d->email}}</td>
@@ -163,7 +173,7 @@
                     </tr>
                     @endforeach
                 </table>
-                {{ $kaderanggrek->links() }}
+                {{ $kader->links() }}
             </div>
         </div>
     </section>

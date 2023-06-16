@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 //
+Route::get('/', 'App\Http\Controllers\AuthController@index')->name('login');
+
 Route::get('login', 'App\Http\Controllers\AuthController@index')->name('login');
 Route::post('proses_login', 'App\Http\Controllers\AuthController@proses_login')->name('proses_login');
 
@@ -29,9 +31,8 @@ Route::group(['middleware' => ['auth']], function()
 
         Route::get('/tampiltambahkader', 'App\Http\Controllers\AdminController@viewtambah')->name('admin');
 
-        Route::get('/tabelkaderanggrek', 'App\Http\Controllers\AdminController@tabelanggrek')->name('admin');
+        Route::get('/tabelkaderadmin/{parameter}', 'App\Http\Controllers\AdminController@tabelkader')->name('admin');
 
-        Route::get('/tabelkadermawar', 'App\Http\Controllers\AdminController@tabelmawar')->name('admin');
         //
         Route::get('/tabelkaderbalaidesa', 'App\Http\Controllers\AdminController@tabelbalaidesa')->name('admin');
         //

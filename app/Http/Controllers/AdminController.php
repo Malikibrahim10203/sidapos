@@ -61,28 +61,21 @@ class AdminController extends Controller
         return view('admin/tambahKader', ['dataposyandu'=> $dataposyandu]);
     }
 
-    public function tabelanggrek()
+    public function tabelkader($parameter)
     {
-            
-        $kaderanggrek = DB::table('users')
-            ->leftJoin('posyandu', 'users.idposyandu', '=', 'posyandu.idposyandu')->where('jabatan', '=', 'kader')->where('users.idposyandu', '=', '1')
-            ->simplePaginate(5);
-        return view('admin/tabelkader/tabelAnggrek', ['kaderanggrek'=>$kaderanggrek]);
-    }
-
-    public function tabelmawar()
-    {
-        
-        $kadermawar = DB::table('users')
-            ->leftJoin('posyandu', 'users.idposyandu', '=', 'posyandu.idposyandu')->where('jabatan', '=', 'kader')->where('users.idposyandu', '=', '2')
-            ->simplePaginate(5);
-        return view('admin/tabelkader/tabelMawar', ['kadermawar'=>$kadermawar]);
-    }
-    //
-
-    public function tabelbalaidesa()
-    {
-        return view('admin/tabelkader/tabelbalaidesa');
+        if ($parameter == 1) {
+            $nama = 1;
+            $kader = DB::table('users')
+                ->leftJoin('posyandu', 'users.idposyandu', '=', 'posyandu.idposyandu')->where('jabatan', '=', 'kader')->where('users.idposyandu', '=', '1')
+                ->simplePaginate(5);
+            return view('admin/tabelkader/tabelKaderAdmin', ['kader'=>$kader, 'nama'=>$nama]);
+        } else if ($parameter == 2){
+            $nama = 2;
+            $kader = DB::table('users')
+                ->leftJoin('posyandu', 'users.idposyandu', '=', 'posyandu.idposyandu')->where('jabatan', '=', 'kader')->where('users.idposyandu', '=', '2')
+                ->simplePaginate(5);
+            return view('admin/tabelkader/tabelKaderAdmin', ['kader'=>$kader, 'nama'=>$nama]);
+        }
     }
 
     //
@@ -145,13 +138,13 @@ class AdminController extends Controller
             $nama = 1;
             $tabelbalita = DB::table('balita')
                 ->leftJoin('jeniskelamin', 'balita.id_jk', '=', 'jeniskelamin.id_jk')->where('idposyandu', '=', 1)->simplePaginate(5);                                                                                
-            return view('admin/tabelbalita/tabelBalitaAnggrek', ['tabelbalita'=>$tabelbalita, 'nama'=>$nama]);
+            return view('admin/tabelbalita/tabelBalitaAdmin', ['tabelbalita'=>$tabelbalita, 'nama'=>$nama]);
         } else if($parameter == 2) {
 
             $nama = 2;
             $tabelbalita = DB::table('balita')
                 ->leftJoin('jeniskelamin', 'balita.id_jk', '=', 'jeniskelamin.id_jk')->where('idposyandu', '=', 2)->simplePaginate(5);
-            return view('admin/tabelbalita/tabelBalitaMawar', ['tabelbalita'=>$tabelbalita, 'nama'=>$nama]);
+            return view('admin/tabelbalita/tabelBalitaAdmin', ['tabelbalita'=>$tabelbalita, 'nama'=>$nama]);
         }
     }
 
@@ -163,14 +156,14 @@ class AdminController extends Controller
             $tabelibuhamil = DB::table('ibuhamil')
                 ->leftJoin('status', 'ibuhamil.id_status', '=', 'status.id_status')->where('idposyandu', '=', 1)
                 ->simplePaginate(5);
-            return view('admin/tabelbumil/tabelIbuhamilAnggrek', ['tabelibuhamil'=>$tabelibuhamil, 'nama'=>$nama]);
+            return view('admin/tabelbumil/tabelIbuhamilAdmin', ['tabelibuhamil'=>$tabelibuhamil, 'nama'=>$nama]);
         } else if($parameter == 2) {
 
             $nama = 2;
             $tabelibuhamil = DB::table('ibuhamil')
                 ->leftJoin('status', 'ibuhamil.id_status', '=', 'status.id_status')->where('idposyandu', '=', 2)
                 ->simplePaginate(5);
-            return view('admin/tabelbumil/tabelIbuhamilMawar', ['tabelibuhamil'=>$tabelibuhamil, 'nama'=>$nama]);
+            return view('admin/tabelbumil/tabelIbuhamilAdmin', ['tabelibuhamil'=>$tabelibuhamil, 'nama'=>$nama]);
         }
     }
 }
