@@ -95,14 +95,14 @@ class AdminController extends Controller
             'namalengkap'   => $request->namalengkap,
             'username'      => $request->username,
             'email'         => $request->email,
-            'password'      => bcrypt($request->password),
+            'password'      => $request->password,
             'idposyandu'    => $request->pos
         ]);
 
         if($data == '1') {
-            return redirect('/tabelkaderanggrek')->with('status_update', 'Data Berhasil Diubah');
+            return redirect('/tabelkaderadmin/1')->with('status_update', 'Data Berhasil Diubah');
         } else if($data == '2') {
-            return redirect('/tabelkadermawar')->with('status_update', 'Data Berhasil Diubah');
+            return redirect('/tabelkaderadmin/2')->with('status_update', 'Data Berhasil Diubah');
         } else {
             return redirect('/dashboardadmin');
         }

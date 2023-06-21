@@ -21,13 +21,21 @@ body {
     box-shadow: 0 10px 15px rgba(0,0,0,0.1);
 }
 
+.container .right {
+    width: 50vw;
+}
+
+.container .right img {
+    width: 35vw;
+}
+
 .login {
-    width: 400px;
+    width: 400vw;
 
 }
 
 form {
-    width: 250px;
+    width: 20vw;
     margin: 60px auto;
 }
 

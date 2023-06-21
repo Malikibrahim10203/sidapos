@@ -24,13 +24,13 @@
                 <input type="text" name="namalengkap" placeholder="nama lengkap" value="{{ $data->namalengkap }}" class="isian">
                 <br>    
                 <label for="username">Username</label>
-                <input type="text" name="username" placeholder="example" value="{{ $data->username }}"class="isian">
+                <input type="text" name="username" placeholder="example" value="{{ $data->username }}" class="isian">
                 <br>
                 <label for="email">Email</label>
-                <input type="email" name="email" placeholder="example@exam.com" value="{{ $data->email }}"class="isian">
+                <input type="email" name="email" placeholder="example@exam.com" value="{{ $data->email }}" class="isian">
                 <br>         
                 <label for="password">Password</label>
-                <input type="password" name="password" placeholder="password" class="isian">
+                <input type="password" name="password" placeholder="password" value="{{ $data->password }}" class="isian">
                 <br>
                 <label for="pos">Pos</label>
                     <select name="pos" id="po" class="isian">

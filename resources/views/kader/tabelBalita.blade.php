@@ -55,9 +55,29 @@
                     <i class="bi bi-three-dots"></i>
                 </button>
 
-                <p>
-                    <a href="{{url('logout')}}" class="btn btn-danger"><i class="bi bi-box-arrow-right"></i>Keluar</a>
-                </p>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Keluar
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Peringatan</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                Apakah anda yakin?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                                <a href="{{url('logout')}}" class="btn btn-danger"><i class="bi bi-box-arrow-right"></i>Keluar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </nav>
         
@@ -166,7 +186,7 @@
                         <th rowspan="2">Umur</th>
                         <th colspan="5" style="text-align: center;">IMUNISASI</th>
                         <th rowspan="2">Jenis Kelamin</th>
-                        <th rowspan="2" style="text-align: center;" width="20%">Opsi</th>
+                        <th rowspan="2" style="text-align: center;" width="10%">Opsi</th>
                     </tr>
                     <tr class="judul1">
                         <th>BCG</th>
@@ -270,9 +290,31 @@
                         </td>
                         <td>{{ $d->kelamin}}</td>
                         <td>
-                            <a href="ubahbalita/{{ $d->idbalita }}" class="btn btn-info"> <i class="bi bi-pencil-square"></i> Ubah</a> 
+                            <a href="ubahbalita/{{ $d->idbalita }}" class="btn btn-info"> <i class="bi bi-pencil-square"></i></a> 
                             |
-                            <a href="hapusbalita/{{ $d->idbalita }}" class="btn btn-danger"> <i class="bi bi-trash"></i> Hapus</a>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Modaldelete">
+                                <i class="bi bi-trash"></i>
+                            </button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="Modaldelete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Apakah anda yakin, ingin Hapus?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            <a href="hapusbalita/{{ $d->idbalita }}" class="btn btn-danger"> <i class="bi bi-trash"></i> Hapus</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </td>
                     </tr>
                     <?php $no++?>
