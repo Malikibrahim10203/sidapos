@@ -13,7 +13,7 @@ body {
 
 .container {
     justify-content: center;
-    width: 100%;
+    width: 90vw;
     display: flex;
     background: #fff;
     border-radius: 15px;
@@ -21,18 +21,18 @@ body {
     position: absolute;
 }
 
-.login {
-    width: 400px;
+.box {
+    width: 50vh;
 
 }
 
 form {
-    width: 300px;
+    width: 50vh;
     margin: 20px auto;
 }
 
 .h1a {
-    margin: 10px;
+    margin: 50px;
     text-align: left;
     font-weight: bold;
     text-transform: uppercase;

@@ -95,7 +95,7 @@ class AdminController extends Controller
             'namalengkap'   => $request->namalengkap,
             'username'      => $request->username,
             'email'         => $request->email,
-            'password'      => $request->password,
+            'password'      => bcrypt($request->password),
             'idposyandu'    => $request->pos
         ]);
 

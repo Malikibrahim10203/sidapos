@@ -58,7 +58,7 @@
 
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    Keluar
+                    <i class="bi bi-box-arrow-right"></i>
                 </button>
 
                 <!-- Modal -->
@@ -74,7 +74,7 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                                <a href="{{url('logout')}}" class="btn btn-danger"><i class="bi bi-box-arrow-right"></i>Keluar</a>
+                                <a href="{{url('logout')}}" class="btn btn-danger">Yakin</a>
                             </div>
                         </div>
                     </div>

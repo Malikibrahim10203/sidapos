@@ -94,11 +94,6 @@ a {
     float: right;
 }
 
-img {
-    background-color: #20C997;
-    border-radius: 50%;
-}
-
 .salam {
     justify-content: center;
 }
@@ -120,6 +115,7 @@ img {
     border: none;
     color: grey;
     box-shadow: 0 5px 10px #9DB2BF;
+    background-color: #20C997;
 }
 
 .menu-posyandu {
@@ -127,4 +123,14 @@ img {
     background-color: #6B728E;
     color: #F8F8F8;
     box-shadow: 0 5px 10px #9DB2BF;
+}
+
+.bgcircle {
+    width: 9vh;
+    display: grid;
+    place-items: center;
+}
+
+.icon {
+    color: white;
 }

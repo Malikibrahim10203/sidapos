@@ -21,7 +21,7 @@
                 </div>
             @endif
         </div>
-        <div class="login">
+        <div class="box">
             <h1 class="h1b">Tambah Kader</h1>
             <form action="simpan" method="post">
                 @csrf

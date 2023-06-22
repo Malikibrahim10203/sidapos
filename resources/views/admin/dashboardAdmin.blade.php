@@ -38,7 +38,7 @@
 
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    Keluar
+                    <i class="bi bi-box-arrow-right"></i>
                 </button>
 
                 <!-- Modal -->
@@ -54,7 +54,7 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                                <a href="{{url('logout')}}" class="btn btn-danger"><i class="bi bi-box-arrow-right"></i>Keluar</a>
+                                <a href="{{url('logout')}}" class="btn btn-danger">Yakin</a>
                             </div>
                         </div>
                     </div>
@@ -65,24 +65,13 @@
 
     <section class="p-4" id="main-content">
 
-        <div class="container mt-2 salam">
-            <div class="card">
-                <div class="card-body">
-                    <div class="judul-atas">
-                        <div class="judul-dashboard">
-                            <h2><strong>SELAMAT DATANG</strong>, {{ $data }}</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <div class="container">
             <div class="menu-atas">
 
-                <div class="card mt-3">
+                <div class="mt-3">
                     <div class="card-body status">
-                        <div class="card item menu-kader" style="width: 18rem;">
+                        <div class="card item menu-kader" style="width: 16rem;">
                             <div class="card-body jarak">
                                 <div class="icon">
                                     <h5 class="card-title">Kader Posyandu Anggrek</h5>
@@ -93,7 +82,7 @@
                             </div>
                         </div>
 
-                        <div class="card item menu-kader" style="width: 18rem;">
+                        <div class="card item menu-kader" style="width: 16rem;">
                             <div class="card-body jarak">
                                 <div class="icon">
                                     <h5 class="card-title">Kader Posyandu Mawar</h5>

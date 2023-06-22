@@ -44,7 +44,7 @@
 
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    Keluar
+                    <i class="bi bi-box-arrow-right"></i>
                 </button>
 
                 <!-- Modal -->
@@ -60,7 +60,7 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                                <a href="{{url('logout')}}" class="btn btn-danger"><i class="bi bi-box-arrow-right"></i>Keluar</a>
+                                <a href="{{url('logout')}}" class="btn btn-danger">Yakin</a>
                             </div>
                         </div>
                     </div>
@@ -189,12 +189,12 @@
                             <a href="/ubahkader/{{ $d->id }}" class="btn btn-info"> <i class="bi bi-pencil-square"></i></a>
                             |
                             <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#ModalDelete">
                                 <i class="bi bi-trash"></i>
                             </button>
 
                             <!-- Modal -->
-                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal fade" id="ModalDelete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
